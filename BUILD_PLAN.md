@@ -6,6 +6,12 @@
 
 Because this is a large build, it's broken into discrete sessions, each independently completable in one sitting, each ending in a concrete "done check." Sessions map onto course sections so the code and lessons stay in lockstep, but the code itself lives outside `sections/**` (this plan does not edit any `sections/**/README.md` files).
 
+## Progress (updated after Session 4)
+
+- **Done:** Sessions 0-4, plus a demo-guides layer not in the original plan (see Session Plan note below). All pushed to `origin/main`, commits `8d8491e`..`1b68bbb`.
+- **Pending/blocked:** `OPENAI_API_KEY` is not yet configured locally. Sessions 3 and 4's live done-checks (5 hardcoded messages routing correctly; multi-turn clarification scenario) are written and structurally verified (imports/graph-compile checks pass with no API calls) but haven't been run live yet. Per explicit user instruction: don't block future sessions on this missing key — keep writing code, note what's pending, move on. The user will add keys to `.env` themselves when ready.
+- **Next up:** Session 5 — Grounded Responses & Safe Fallback.
+
 ## Decisions agreed with user
 
 | Area | Decision |
@@ -30,23 +36,32 @@ Defaults adopted without a separate question (low-stakes / clearly implied by ex
 **Session 0 — Repo & Tooling Bootstrap**
 - `pyproject.toml` (uv-managed), `.python-version`, `.gitignore`, `.env.example` (`OPENAI_API_KEY`, `LANGSMITH_API_KEY`, `LANGSMITH_PROJECT`), `docs/setup.md`.
 - Done: `uv sync` works; `python -c "import langchain, langgraph, deepeval, streamlit"` succeeds.
+- **Status: done** (commit `8d8491e`). Verified — `uv sync` and the import check both passed.
 
 **Session 1 — Mock Backend Data Layer** (→ Section 2.02)
 - `data/backend/shipments.json`, `customers.json`, `policies.json`.
 - `tools/backend_store.py` — typed loaders/lookups (`get_shipment`, `get_customer`, `get_policy`), explicit not-found handling.
 - Done: lookups for an existing and a missing ID both behave correctly, no fabrication.
+- **Status: done** (commit `eac2d74`). Verified — found and missing IDs both behave correctly for shipments, customers, and policies.
 
 **Session 2 — Tool Definitions** (→ Section 2.02)
 - `tools/shipment_lookup.py`, `order_history.py`, `policy_lookup.py`, `escalation.py` (writes to `data/backend/tickets.json`), `tools/__init__.py` exporting `ALL_TOOLS`.
 - Done: each tool callable directly, escalation produces a ticket record.
+- **Status: done** (commit `10c0e2d`). Verified — all 4 tools invoked directly via `.invoke()`; escalation produced a real ticket (`TICKET-0001`), then `data/backend/tickets.json` was reset to `[]`.
 
 **Session 3 — Assistant Orchestration (baseline)** (→ Section 2.03)
 - `app/llm.py` (OpenAI chat model factory), `app/prompts.py`, `app/router.py` (intent routing), `app/assistant.py` (`handle_message()` entrypoint, plain-chain first pass).
 - Done: 5 hardcoded messages (one per intent: tracking/delay/refund/customs/escalation) route and respond correctly.
+- **Status: done** (commit `53c6f4c`). Code written, imports verified. Live done-check (5 hardcoded messages) is pending `OPENAI_API_KEY` — not yet run for real.
 
 **Session 4 — LangGraph Stateful Orchestration** (→ Section 2.03)
 - `app/state.py` (`AssistantState`), `app/graph.py` (`StateGraph`: route → tool-call → respond → clarify-loop → escalate). Refactor `app/assistant.py` to call the compiled graph.
 - Done: multi-turn scenario with missing info → clarification → resolution works end-to-end.
+- **Status: done** (commit `42f5d29`). Graph compiles, node structure (`route, agent, tools`) verified without API calls. Live multi-turn clarification done-check is pending `OPENAI_API_KEY` — not yet run for real.
+
+**Demo Guides (added alongside Sessions 0-4, not in the original plan)**
+- `docs/demos/README.md` indexes every session against its course section and demo file. `docs/demos/00_demo_bootstrap.md` covers Session 0 (no section tag). Sessions 1-4 each got a `NN_demo_*.md` file placed next to the `README.md` of the section they map to in `sections/02_the_assistant_we_are_building/**`, with exact commands, expected output, and the done-check from this file.
+- **Status: done** (commit `1b68bbb`). Continue this convention for future sessions that map to a course section: add a demo file next to that section's `README.md` (never edit the `README.md` itself).
 
 **Session 5 — Grounded Responses & Safe Fallback** (→ Section 2.04)
 - Finalize `app/prompts.py` (cite-only-tool-data policy, fallback/escalation phrasing), `app/fallback.py` (centralized fallback templates), `docs/assistant_spec.md` (the product spec artifact).
@@ -114,4 +129,5 @@ Defaults adopted without a separate question (low-stakes / clearly implied by ex
 ## Notes for next session
 
 - Work proceeds session-by-session in new conversations; each session is self-contained enough to start cold using this plan file plus the repo state at the time.
-- No `sections/**/README.md` files are modified by this build — only root-level config, `app/`, `tools/`, `data/`, `evals/`, `reports/`, `docs/`, and `.github/workflows/`.
+- No `sections/**/README.md` files are modified by this build — only root-level config, `app/`, `tools/`, `data/`, `evals/`, `reports/`, `docs/`, `.github/workflows/`, and (for demo guides only) new non-`README.md` files inside `sections/**`.
+- Commits so far: `8d8491e`..`1b68bbb` on `main`. A fresh session should run `git log --oneline` to confirm this matches the repo's actual state before continuing, then proceed to Session 5.
