@@ -6,11 +6,11 @@
 
 Because this is a large build, it's broken into discrete sessions, each independently completable in one sitting, each ending in a concrete "done check." Sessions map onto course sections so the code and lessons stay in lockstep, but the code itself lives outside `sections/**` (this plan does not edit any `sections/**/README.md` files).
 
-## Progress (updated after Session 5)
+## Progress (updated after Session 5b)
 
-- **Done:** Sessions 0-5, plus a demo-guides layer not in the original plan (see Session Plan note below).
-- **Pending/blocked:** `OPENAI_API_KEY` is not yet configured locally. Sessions 3 and 4's live done-checks (5 hardcoded messages routing correctly; multi-turn clarification scenario), and Session 5's ambiguous-query clarification check, are written and structurally verified (imports/graph-compile/stubbed-LLM checks pass with no API calls) but haven't been run live yet. Per explicit user instruction: don't block future sessions on this missing key — keep writing code, note what's pending, move on. The user will add keys to `.env` themselves when ready.
-- **Next up:** Session 5b — Streamlit Demo UI, then Session 6 — LangSmith Tracing.
+- **Done:** Sessions 0-5b, plus a demo-guides layer not in the original plan (see Session Plan note below).
+- **Pending/blocked:** `OPENAI_API_KEY` is not yet configured locally. Sessions 3, 4, and 5's live done-checks (5 hardcoded messages; multi-turn clarification; ambiguous-query clarification), plus 5b's live chat exchange, are written and structurally verified (imports/graph-compile/stubbed-LLM/server-boot checks all pass with no API calls) but haven't been run live yet. Per explicit user instruction: don't block future sessions on this missing key — keep writing code, note what's pending, move on. The user will add keys to `.env` themselves when ready.
+- **Next up:** Session 6 — LangSmith Tracing + Trace Schema.
 
 ## Decisions agreed with user
 
@@ -71,6 +71,7 @@ Defaults adopted without a separate question (low-stakes / clearly implied by ex
 **Session 5b — Streamlit Demo UI** (slot in alongside Session 5)
 - `app/streamlit_app.py` — chat UI calling `app/assistant.py`.
 - Done: can chat with the assistant through a browser locally.
+- **Status: done.** App boots and serves HTTP 200 with a clean startup log, verified headless with no API key needed. Live chat exchange (actually talking to it) is pending `OPENAI_API_KEY`. Demo guide + index entry added.
 
 **Session 6 — LangSmith Tracing + Trace Schema** (→ Section 3.01–02)
 - Enable LangSmith auto-tracing (env vars), `app/trace_schema.py` (the conceptual event schema taught in lessons), `app/tracing.py` — thin wrapper that tags LangSmith runs with course-relevant metadata AND writes a local JSONL export (trace_id, event_type, payload) so later tooling doesn't depend on the LangSmith API.
