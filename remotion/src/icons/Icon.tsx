@@ -19,6 +19,7 @@ import {
   PredictIcon,
   SearchIcon,
   SparkleIcon,
+  ThumbsUpIcon,
 } from "./icons";
 
 export type IconName =
@@ -41,7 +42,8 @@ export type IconName =
   | "database_x"
   | "bell"
   | "sparkle"
-  | "neural";
+  | "neural"
+  | "thumbs_up";
 
 type Props = {
   name: IconName | string;
@@ -75,6 +77,7 @@ const iconComponents: Record<
   bell: BellIcon,
   sparkle: SparkleIcon,
   neural: NeuralIcon,
+  thumbs_up: ThumbsUpIcon,
 };
 
 export const Icon: React.FC<Props> = ({

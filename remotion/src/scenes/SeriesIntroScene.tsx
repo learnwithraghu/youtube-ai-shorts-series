@@ -12,7 +12,7 @@ const FLOATING_ICONS = [
 ];
 
 export const SeriesIntroScene: React.FC<{ scene: Scene }> = ({ scene }) => {
-  const { visual, captions } = scene;
+  const { visual, captions = [] } = scene;
   const frame = useCurrentFrame();
 
   return (
@@ -49,9 +49,17 @@ export const SeriesIntroScene: React.FC<{ scene: Scene }> = ({ scene }) => {
           gap: 24,
         }}
       >
-        {visual.elements?.map((element, index) => (
-          <AnimatedElement key={`${element.type}-${index}`} {...element} delayFrames={index * 8} />
-        ))}
+        {visual.elements?.map((element, index) => {
+          const hasExplicit = element.startMs != null;
+          return (
+            <AnimatedElement
+              key={`${element.type}-${index}`}
+              {...element}
+              startMs={hasExplicit ? element.startMs : undefined}
+              delayFrames={hasExplicit ? undefined : index * 7}
+            />
+          );
+        })}
       </AbsoluteFill>
       <CaptionOverlay captions={captions} />
     </BrandedBackground>

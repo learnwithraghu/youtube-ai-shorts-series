@@ -3,6 +3,8 @@ import { Scene } from "../types";
 import { BrandedBackground } from "../components/BrandedBackground";
 import { CaptionOverlay } from "../components/CaptionOverlay";
 import { AnimatedElement } from "../components/AnimatedElement";
+import { SubscribePill } from "../components/SubscribePill";
+import { pickFollowCaption } from "../utils/animations";
 import { Icon } from "../icons/Icon";
 
 const OUTRO_ICONS = [
@@ -12,7 +14,7 @@ const OUTRO_ICONS = [
 ];
 
 export const SeriesOutroScene: React.FC<{ scene: Scene }> = ({ scene }) => {
-  const { visual, captions } = scene;
+  const { visual, captions = [] } = scene;
   const frame = useCurrentFrame();
 
   return (
@@ -47,9 +49,31 @@ export const SeriesOutroScene: React.FC<{ scene: Scene }> = ({ scene }) => {
           gap: 24,
         }}
       >
-        {visual.elements?.map((element, index) => (
-          <AnimatedElement key={`${element.type}-${index}`} {...element} delayFrames={index * 10} />
-        ))}
+        {visual.elements?.map((element, index) => {
+          const hasExplicit = element.startMs != null;
+          // Default the CTA and title to align with "follow / subscribe" spoken line
+          const followish = pickFollowCaption(captions)?.startMs ?? 2200;
+          const defaultStart = index === 0 ? followish - 300 : followish + index * 180;
+          return (
+            <AnimatedElement
+              key={`${element.type}-${index}`}
+              {...element}
+              startMs={hasExplicit ? element.startMs : defaultStart}
+              delayFrames={hasExplicit ? undefined : index * 8}
+            />
+          );
+        })}
+
+        {(() => {
+          // Show Like & Subscribe pill synced to the "follow for the next" voiceover moment
+          const followCaption = pickFollowCaption(captions);
+          const pillStart = followCaption ? Math.max(800, followCaption.startMs - 150) : 2400;
+          return (
+            <div style={{ marginTop: 8 }}>
+              <SubscribePill startMs={pillStart} />
+            </div>
+          );
+        })()}
       </AbsoluteFill>
       <CaptionOverlay captions={captions} />
     </BrandedBackground>

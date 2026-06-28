@@ -5,10 +5,10 @@ import { CaptionOverlay } from "../components/CaptionOverlay";
 import { AnimatedElement } from "../components/AnimatedElement";
 import { Icon } from "../icons/Icon";
 import { colors } from "../theme";
-import { useSceneAnimation } from "../utils/animations";
+import { pickFirstSubstantialCaption, useSceneAnimation } from "../utils/animations";
 
 export const QuestionHookScene: React.FC<{ scene: Scene }> = ({ scene }) => {
-  const { visual, captions } = scene;
+  const { visual, captions = [] } = scene;
   const frame = useCurrentFrame();
   const chipStyle = useSceneAnimation("bounceIn", 20);
   const ringScale = interpolate(frame, [30, 60], [1, 1.15], {
@@ -59,7 +59,20 @@ export const QuestionHookScene: React.FC<{ scene: Scene }> = ({ scene }) => {
             ) : null}
             {visual.right ? (
               <div style={{ flex: 1 }}>
-                <AnimatedElement {...visual.right} delayFrames={10} />
+                {(() => {
+                  const hasExplicit = visual.right.startMs != null;
+                  // Reveal the core question roughly when the spoken question lands (last caption or mid-late)
+                  const last = captions[captions.length - 1];
+                  const substantial = pickFirstSubstantialCaption(captions);
+                  const qStart = (last ?? substantial)?.startMs ?? 900;
+                  return (
+                    <AnimatedElement
+                      {...visual.right}
+                      startMs={hasExplicit ? visual.right.startMs : Math.max(600, qStart - 200)}
+                      delayFrames={hasExplicit ? undefined : 8}
+                    />
+                  );
+                })()}
                 {visual.hookLabel ? (
                   <div style={{ ...chipStyle, marginTop: 28, display: "flex", justifyContent: "flex-start" }}>
                     <div

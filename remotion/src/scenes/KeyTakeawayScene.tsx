@@ -5,13 +5,26 @@ import { CaptionOverlay } from "../components/CaptionOverlay";
 import { AnimatedElement } from "../components/AnimatedElement";
 import { Icon, IconName } from "../icons/Icon";
 import { colors } from "../theme";
-import { useSceneAnimation } from "../utils/animations";
+import { msToFrames } from "../constants";
+import { pickFirstSubstantialCaption, useSceneAnimation } from "../utils/animations";
 
 const DEFAULT_BULLET_ICONS: IconName[] = ["predict", "pattern", "database_x"];
 
+function getRecapStartMs(captions: Scene["captions"]): number {
+  const first = pickFirstSubstantialCaption(captions);
+  if (!first) return 0;
+  // Start the takeaway UI a touch before or at the spoken recap so it feels synced
+  return Math.max(0, first.startMs - 120);
+}
+
 export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
-  const { visual, captions } = scene;
+  const { visual, captions = [] } = scene;
   const bulletIcons = (visual.bulletIcons ?? DEFAULT_BULLET_ICONS) as IconName[];
+  const recapStart = getRecapStartMs(captions);
+
+  // Spread bullets nicely across the remaining time after the recap starts
+  const bulletStartOffset = 520; // ms after recap header starts
+  const bulletStagger = 420; // ms between bullets
 
   return (
     <BrandedBackground background={visual.background}>
@@ -23,9 +36,18 @@ export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
           gap: 28,
         }}
       >
-        {visual.elements?.map((element, index) => (
-          <AnimatedElement key={`${element.type}-${index}`} {...element} delayFrames={index * 8} />
-        ))}
+        {visual.elements?.map((element, index) => {
+          const hasExplicit = element.startMs != null;
+          const startMs = hasExplicit ? element.startMs : recapStart + index * 80;
+          return (
+            <AnimatedElement
+              key={`${element.type}-${index}`}
+              {...element}
+              startMs={startMs}
+              delayFrames={hasExplicit ? undefined : index * 6}
+            />
+          );
+        })}
 
         <div
           style={{
@@ -39,14 +61,19 @@ export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
             gap: 22,
           }}
         >
-          {visual.bullets?.map((bullet, index) => (
-            <BulletRow
-              key={bullet}
-              text={bullet}
-              index={index}
-              icon={bulletIcons[index] ?? "check"}
-            />
-          ))}
+          {visual.bullets?.map((bullet, index) => {
+            const text = typeof bullet === "string" ? bullet : bullet.text ?? String(bullet);
+            const explicitStart = typeof bullet === "object" ? bullet.startMs : undefined;
+            const computedStart = recapStart + bulletStartOffset + index * bulletStagger;
+            return (
+              <BulletRow
+                key={index}
+                text={text}
+                icon={bulletIcons[index] ?? "check"}
+                startMs={explicitStart ?? computedStart}
+              />
+            );
+          })}
         </div>
       </AbsoluteFill>
       <CaptionOverlay captions={captions} />
@@ -54,12 +81,13 @@ export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
   );
 };
 
-const BulletRow: React.FC<{ text: string; index: number; icon: IconName }> = ({
+const BulletRow: React.FC<{ text: string; icon: IconName; startMs: number }> = ({
   text,
-  index,
   icon,
+  startMs,
 }) => {
-  const style = useSceneAnimation("slideUp", 12 + index * 10);
+  const delayFrames = msToFrames(startMs);
+  const style = useSceneAnimation("slideUp", delayFrames);
 
   return (
     <div style={{ ...style, display: "flex", alignItems: "center", gap: 18 }}>

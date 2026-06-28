@@ -23,6 +23,7 @@ export type VisualElement = {
   asset?: string;
   animation?: AnimationType;
   style?: string;
+  startMs?: number;
 };
 
 export type Caption = {
@@ -45,6 +46,8 @@ export type ContextIcon = {
   y?: string;
 };
 
+export type BulletItem = string | { text: string; startMs?: number };
+
 export type SceneVisual = {
   layout: string;
   background?: string;
@@ -52,7 +55,7 @@ export type SceneVisual = {
   hookLabel?: string;
   elements?: VisualElement[];
   steps?: InfographicStep[];
-  bullets?: string[];
+  bullets?: BulletItem[];
   bulletIcons?: string[];
   contextIcons?: ContextIcon[];
   calloutIcons?: string[];

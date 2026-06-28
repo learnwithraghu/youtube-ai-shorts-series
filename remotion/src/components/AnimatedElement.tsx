@@ -1,5 +1,7 @@
+import { useCurrentFrame } from "remotion";
 import { Icon } from "../icons/Icon";
 import { useSceneAnimation } from "../utils/animations";
+import { msToFrames } from "../constants";
 import { VisualElement } from "../types";
 import { colors } from "../theme";
 
@@ -15,8 +17,20 @@ export const AnimatedElement: React.FC<Props> = ({
   animation = "fadeIn",
   delayFrames = 0,
   fontSize,
+  startMs,
 }) => {
-  const style = useSceneAnimation(animation, delayFrames);
+  const frame = useCurrentFrame();
+  const startFrame = startMs != null ? msToFrames(startMs) : 0;
+
+  const effectiveDelay = startMs != null ? startFrame : delayFrames;
+  // Always call hooks in the same order (React rules). Compute visibility after.
+  const style = useSceneAnimation(animation, effectiveDelay);
+
+  // Do not render anything before its scheduled start time (prevents showing unsaid text)
+  const isHidden = startFrame > 0 && frame < startFrame;
+  if (isHidden) {
+    return null;
+  }
 
   if (type === "icon" && asset) {
     const iconSize = fontSize ?? 96;

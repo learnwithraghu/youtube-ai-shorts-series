@@ -1,5 +1,5 @@
 import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { AnimationType } from "../types";
+import { AnimationType, Caption } from "../types";
 
 export const useSceneAnimation = (
   animation: AnimationType = "fadeIn",
@@ -79,3 +79,13 @@ export const useDelayedEnter = (startMs: number, durationMs: number) => {
 
   return { opacity, visible: frame >= startFrame && frame <= endFrame };
 };
+
+/** Pick the first caption that feels like a real spoken sentence (skip short bleed words) */
+export function pickFirstSubstantialCaption(captions: Caption[] = []): Caption | undefined {
+  return captions.find((c) => c.text.trim().length > 18) ?? captions[0];
+}
+
+/** Find a caption that signals the subscribe/follow CTA moment */
+export function pickFollowCaption(captions: Caption[] = []): Caption | undefined {
+  return captions.find((c) => /follow|subscribe|next/i.test(c.text));
+}

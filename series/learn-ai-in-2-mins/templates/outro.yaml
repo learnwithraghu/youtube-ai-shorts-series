@@ -25,12 +25,16 @@ visual:
     - type: cta
       text: "Follow for the next concept"
       animation: pulse
+      startMs: 2200
     - type: title
       text: "Learn AI in 2 Mins"
       animation: fadeIn
+      startMs: 2600
     - type: badge
       text: "Next episode coming soon"
       animation: slideUp
+      startMs: 3200
+  # Like & Subscribe pill is injected automatically in the outro scene (timed to voiceover)
 
 audio:
   music: series_outro_sting

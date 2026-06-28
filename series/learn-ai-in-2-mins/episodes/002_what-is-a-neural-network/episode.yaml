@@ -162,15 +162,15 @@ scenes:
         - name: chip
           startMs: 12000
           x: 10%
-          y: 22%
+          'y': 22%
         - name: sparkle
           startMs: 18000
           x: 80%
-          y: 30%
+          'y': 30%
         - name: pattern
           startMs: 25000
           x: 75%
-          y: 55%
+          'y': 55%
       steps:
         - label: Data enters Station 1
           icon: pattern

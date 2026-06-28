@@ -308,3 +308,22 @@ export const NeuralIcon: React.FC<IconSvgProps> = ({
     />
   </svg>
 );
+
+export const ThumbsUpIcon: React.FC<IconSvgProps> = ({
+  size = 28,
+  color = colors.white,
+  accent = colors.accentBright,
+}) => (
+  <svg width={size} height={size} viewBox="0 0 28 28">
+    <path
+      d="M8 14v9a2 2 0 0 0 2 2h9.5a2 2 0 0 0 1.8-1.1l3.2-6.4a1.5 1.5 0 0 0-.3-1.8l-1.1-1a2 2 0 0 0-1.4-.6H12"
+      style={{ ...stroke(color), strokeWidth: 2, strokeLinejoin: "round" }}
+      fill="rgba(148,163,184,0.12)"
+    />
+    <path
+      d="M8 14l-3.2-6.4A1.8 1.8 0 0 1 6.3 5h4.9c1 0 1.8.7 1.8 1.7V13"
+      style={{ ...stroke(accent), strokeWidth: 2 }}
+      fill="none"
+    />
+  </svg>
+);
