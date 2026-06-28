@@ -10,7 +10,11 @@ out/
 dist/
 build/
 
-# Voiceover copies (source of truth is in episode folders)
+# Media — never commit recordings or rendered videos
+*.mp3
+*.mp4
+
+# Voiceover copies synced into Remotion (source: episode folders)
 remotion/public/episodes/
 
 # OS
