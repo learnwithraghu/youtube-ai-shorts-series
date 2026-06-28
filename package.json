@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "video:001": "cd remotion && npm run render -- 001_what-is-an-llm",
+    "video:001:v2": "cd remotion && npm run render:001:v2",
     "video:002": "cd remotion && npm run render -- 002_what-is-a-neural-network",
     "video:003": "cd remotion && npm run render -- 003_ai-vs-ml-vs-deep-learning",
     "video:004": "cd remotion && npm run render -- 004_what-is-training",

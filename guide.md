@@ -32,6 +32,11 @@ That's it — one file, same folder as `voiceover.md`.
 npm run video:001
 ```
 
+This automatically:
+1. Transcribes your MP3 → `voiceover.vtt`
+2. Syncs caption timing into `episode.yaml`
+3. Renders the video
+
 **Option B — AI tool in terminal:**
 
 Open the episode folder and copy the prompt from:
@@ -52,6 +57,8 @@ remotion/out/001_what-is-an-llm.mp4
 
 1080×1920 vertical, ~90 seconds, your voice + infographic visuals.
 
+Caption timing comes from your actual recording (`voiceover.vtt`), not hand-written timestamps.
+
 ---
 
 ## Episode folder (everything for one video)
@@ -60,10 +67,13 @@ remotion/out/001_what-is-an-llm.mp4
 episodes/001_what-is-an-llm/
 ├── voiceover.md              ← read & record from this
 ├── voiceover.mp3             ← you add this (step 3)
+├── voiceover.vtt             ← auto-generated from MP3
 ├── create-video.prompt.md    ← copy-paste into AI (step 4)
-├── episode.yaml              ← scene script (already done)
+├── episode.yaml              ← scene script (timing synced from VTT)
 └── remotion-guide.md         ← technical reference (optional)
 ```
+
+Series-wide visual pattern: [`series/learn-ai-in-2-mins/visual-style.md`](series/learn-ai-in-2-mins/visual-style.md)
 
 ---
 
@@ -85,6 +95,7 @@ episodes/001_what-is-an-llm/
 
 | What | Command |
 |------|---------|
+| Transcribe MP3 only | `cd remotion && npm run vtt -- 001_what-is-an-llm` |
 | Preview (optional) | `cd remotion && npm run dev:001` |
 
 ---
@@ -95,6 +106,9 @@ episodes/001_what-is-an-llm/
 |---------|-----|
 | "Missing voiceover.mp3" | Save your recording as `voiceover.mp3` in the episode folder |
 | No audio in video | Re-run render after adding MP3 — sync copies it automatically |
+| Captions out of sync | Re-run render — VTT is regenerated from your MP3 each time |
+| First render slow | Run `cd remotion && npm run setup:whisper` once (~150 MB model download) |
+| Faster transcription | Set `OPENAI_API_KEY` in `remotion/.env` to use OpenAI Whisper API |
 | Want to preview first | `cd remotion && npm run dev:001` |
 
 ---

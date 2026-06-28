@@ -3,8 +3,11 @@ import { Scene } from "../types";
 import { BrandedBackground } from "../components/BrandedBackground";
 import { CaptionOverlay } from "../components/CaptionOverlay";
 import { AnimatedElement } from "../components/AnimatedElement";
+import { Icon, IconName } from "../icons/Icon";
 import { colors } from "../theme";
 import { useSceneAnimation } from "../utils/animations";
+
+const BULLET_ICONS: IconName[] = ["predict", "pattern", "database_x"];
 
 export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
   const { visual, captions } = scene;
@@ -36,7 +39,12 @@ export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
           }}
         >
           {visual.bullets?.map((bullet, index) => (
-            <BulletRow key={bullet} text={bullet} index={index} />
+            <BulletRow
+              key={bullet}
+              text={bullet}
+              index={index}
+              icon={BULLET_ICONS[index] ?? "check"}
+            />
           ))}
         </div>
       </AbsoluteFill>
@@ -45,20 +53,27 @@ export const KeyTakeawayScene: React.FC<{ scene: Scene }> = ({ scene }) => {
   );
 };
 
-const BulletRow: React.FC<{ text: string; index: number }> = ({ text, index }) => {
+const BulletRow: React.FC<{ text: string; index: number; icon: IconName }> = ({
+  text,
+  index,
+  icon,
+}) => {
   const style = useSceneAnimation("slideUp", 12 + index * 10);
 
   return (
     <div style={{ ...style, display: "flex", alignItems: "center", gap: 18 }}>
       <div
         style={{
-          width: 14,
-          height: 14,
-          borderRadius: "50%",
-          background: colors.accent,
+          width: 40,
+          height: 40,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           flexShrink: 0,
         }}
-      />
+      >
+        <Icon name={icon} size={32} glow />
+      </div>
       <div style={{ color: colors.white, fontSize: 34, fontWeight: 600, lineHeight: 1.3 }}>
         {text}
       </div>

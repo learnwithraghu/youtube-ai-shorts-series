@@ -1,0 +1,158 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.160
+Welcome to the Learn AI in 2
+
+00:00:02.160 --> 00:00:02.960
+minutes.
+
+00:00:03.080 --> 00:00:06.100
+Quick concept, simple metaphor and zero jargon
+
+00:00:06.100 --> 00:00:06.900
+over
+
+00:00:06.640 --> 00:00:07.440
+load.
+
+00:00:07.600 --> 00:00:09.040
+You probably use GPT everyday,
+
+00:00:09.360 --> 00:00:10.160
+right?
+
+00:00:09.880 --> 00:00:12.780
+But what actually is large language
+
+00:00:12.780 --> 00:00:13.580
+model?
+
+00:00:14.280 --> 00:00:16.379
+Think of LLM like an autocomplete on
+
+00:00:16.379 --> 00:00:17.179
+steroids.
+
+00:00:17.400 --> 00:00:19.400
+You type a few words, your phone
+
+00:00:19.400 --> 00:00:20.380
+suggests the next
+
+00:00:20.380 --> 00:00:21.180
+one.
+
+00:00:21.280 --> 00:00:23.420
+And LLM does the same thing, but
+
+00:00:23.420 --> 00:00:24.400
+at a massive
+
+00:00:24.400 --> 00:00:25.200
+scale.
+
+00:00:24.780 --> 00:00:27.100
+It was trained on billions of words
+
+00:00:27.100 --> 00:00:29.360
+from books, articles and D
+
+00:00:29.360 --> 00:00:30.160
+-web.
+
+00:00:30.060 --> 00:00:30.860
+It learned
+
+00:00:30.520 --> 00:00:31.320
+patterns.
+
+00:00:31.640 --> 00:00:33.320
+Her words usually follow other
+
+00:00:33.320 --> 00:00:34.120
+words.
+
+00:00:34.260 --> 00:00:35.820
+So when you ask a question, it
+
+00:00:35.820 --> 00:00:36.620
+doesn't look up
+
+00:00:36.420 --> 00:00:37.220
+things.
+
+00:00:37.160 --> 00:00:39.980
+It predicts the most likely next word,
+
+00:00:40.460 --> 00:00:42.480
+then the next, and the next, and
+
+00:00:42.480 --> 00:00:43.880
+then it forms a full
+
+00:00:43.880 --> 00:00:44.680
+answer.
+
+00:00:45.040 --> 00:00:46.240
+It's not a search engine, to be
+
+00:00:46.240 --> 00:00:47.040
+honest.
+
+00:00:46.680 --> 00:00:47.520
+It's not a human brain
+
+00:00:47.520 --> 00:00:48.320
+either.
+
+00:00:48.360 --> 00:00:49.680
+It's a pattern prediction
+
+00:00:49.680 --> 00:00:50.500
+machine.
+
+00:00:51.220 --> 00:00:52.860
+And that's what makes it so
+
+00:00:52.860 --> 00:00:53.660
+powerful.
+
+00:00:53.380 --> 00:00:56.960
+So remember, an LLM predicts the most
+
+00:00:56.960 --> 00:00:57.880
+likely next
+
+00:00:57.880 --> 00:00:58.680
+words.
+
+00:00:58.860 --> 00:01:00.980
+These don't patterns, it learned from the
+
+00:01:00.980 --> 00:01:01.780
+text.
+
+00:01:01.840 --> 00:01:03.300
+Powerful, but not
+
+00:01:03.300 --> 00:01:04.100
+magic.
+
+00:01:04.780 --> 00:01:05.820
+That's your concept for
+
+00:01:05.820 --> 00:01:06.620
+today.
+
+00:01:06.540 --> 00:01:07.340
+Follow for the next
+
+00:01:07.180 --> 00:01:07.980
+one.
+
+00:01:07.880 --> 00:01:09.060
+Learn AI in 2
+
+00:01:09.060 --> 00:01:09.860
+minutes.
+

@@ -8,6 +8,9 @@
   "dependencies": {
     "@remotion/animation-utils": "^4.0.484",
     "@remotion/captions": "^4.0.484",
+    "@remotion/install-whisper-cpp": "^4.0.484",
+    "@remotion/openai-whisper": "^4.0.484",
+    "ffmpeg-static": "^5.2.0",
     "@remotion/cli": "4.0.484",
     "@remotion/google-fonts": "^4.0.484",
     "@remotion/layout-utils": "^4.0.484",
@@ -38,8 +41,13 @@
   "scripts": {
     "sync": "node scripts/sync-episodes.mjs",
     "sync:001": "node scripts/sync-episodes.mjs 001_what-is-an-llm",
+    "vtt": "node scripts/mp3-to-vtt.mjs",
+    "vtt:001": "node scripts/mp3-to-vtt.mjs 001_what-is-an-llm",
+    "setup:whisper": "bash scripts/setup-whisper.sh",
+    "apply-vtt": "node scripts/apply-vtt-to-episode.mjs",
     "render": "node scripts/render-episode.mjs",
     "render:001": "node scripts/render-episode.mjs 001_what-is-an-llm",
+    "render:001:v2": "node scripts/render-episode.mjs 001_what-is-an-llm out/001_what-is-an-llm-v2.mp4",
     "dev": "npm run sync && remotion studio",
     "dev:001": "npm run sync:001 && remotion studio --props='{\"episodeFolder\":\"001_what-is-an-llm\"}'",
     "build": "remotion bundle",

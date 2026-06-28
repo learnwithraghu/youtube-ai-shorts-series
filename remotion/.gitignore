@@ -2,6 +2,8 @@ node_modules
 dist
 .DS_Store
 .env
+.whisper-cpp
+.venv-whisper
 
 # Rendered videos and audio (never commit)
 out

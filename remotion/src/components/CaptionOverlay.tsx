@@ -20,13 +20,25 @@ export const CaptionOverlay: React.FC<Props> = ({ captions = [] }) => {
   }
 
   const fadeInFrame = Math.round((active.startMs / 1000) * fps);
-  const fadeOutFrame = Math.round((active.endMs / 1000) * fps);
-  const opacity = interpolate(
-    frame,
-    [fadeInFrame, fadeInFrame + 10, fadeOutFrame - 8, fadeOutFrame],
-    [0, 1, 1, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  const fadeOutFrame = Math.max(fadeInFrame + 1, Math.round((active.endMs / 1000) * fps));
+  const durationFrames = fadeOutFrame - fadeInFrame;
+
+  let opacity = 1;
+  if (durationFrames >= 12) {
+    opacity = interpolate(
+      frame,
+      [fadeInFrame, fadeInFrame + 6, fadeOutFrame - 6, fadeOutFrame],
+      [0, 1, 1, 0],
+      { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+    );
+  } else if (durationFrames >= 2) {
+    opacity = interpolate(
+      frame,
+      [fadeInFrame, fadeOutFrame],
+      [0, 1],
+      { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+    );
+  }
 
   return (
     <div

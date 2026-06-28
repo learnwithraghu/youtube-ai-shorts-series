@@ -1,15 +1,7 @@
+import { Icon } from "../icons/Icon";
 import { useSceneAnimation } from "../utils/animations";
 import { VisualElement } from "../types";
 import { colors } from "../theme";
-
-const iconMap: Record<string, string> = {
-  lightbulb_brain: "💡🧠",
-  chat_bubble: "💬",
-  keyboard: "⌨️",
-  arrow_right: "➡️",
-  loop: "🔁",
-  chat_bubble_complete: "✅💬",
-};
 
 type Props = VisualElement & {
   delayFrames?: number;
@@ -27,9 +19,15 @@ export const AnimatedElement: React.FC<Props> = ({
   const style = useSceneAnimation(animation, delayFrames);
 
   if (type === "icon" && asset) {
+    const iconSize = fontSize ?? 96;
     return (
-      <div style={{ ...style, fontSize: fontSize ?? 96, lineHeight: 1 }}>
-        {iconMap[asset] ?? "✨"}
+      <div style={style}>
+        <Icon
+          name={asset}
+          size={iconSize}
+          animated={asset === "chat_bubble" || asset === "loop"}
+          glow={asset === "lightbulb_brain" || asset === "chip"}
+        />
       </div>
     );
   }
@@ -76,8 +74,13 @@ export const AnimatedElement: React.FC<Props> = ({
             fontWeight: 700,
             color: colors.accentBright,
             marginBottom: 24,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 16,
           }}
         >
+          <Icon name="bell" size={40} animated />
           {text}
         </div>
       );
@@ -87,7 +90,9 @@ export const AnimatedElement: React.FC<Props> = ({
         <div
           style={{
             ...base,
-            display: "inline-block",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
             fontSize: fontSize ?? 28,
             fontWeight: 600,
             background: colors.card,
@@ -96,6 +101,7 @@ export const AnimatedElement: React.FC<Props> = ({
             padding: "10px 22px",
           }}
         >
+          {type === "label" ? <Icon name="chip" size={22} /> : null}
           {text}
         </div>
       );

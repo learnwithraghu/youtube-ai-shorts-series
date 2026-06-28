@@ -13,6 +13,7 @@ export type AnimationType =
   | "slideLeft"
   | "slideRight"
   | "scaleIn"
+  | "bounceIn"
   | "highlight"
   | "pulse";
 

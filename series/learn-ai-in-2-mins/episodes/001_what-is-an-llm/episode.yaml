@@ -1,28 +1,30 @@
 episode:
-  id: "001"
+  id: '001'
   slug: what-is-an-llm
-  title: "What is an LLM?"
-  targetDurationMs: 90000
-  series: "Learn AI in 2 Mins"
-  tone: "simple metaphor + infographic"
+  title: What is an LLM?
+  targetDurationMs: 69860
+  series: Learn AI in 2 Mins
+  tone: simple metaphor + infographic
   wordCount: 218
   templateRefs:
-    welcome: "../../templates/welcome.yaml"
-    outro: "../../templates/outro.yaml"
-
+    welcome: ../../templates/welcome.yaml
+    outro: ../../templates/outro.yaml
 scenes:
   - id: welcome
     type: series_intro
-    durationMs: 6000
-    voiceover: >
+    durationMs: 4658
+    voiceover: |
       Welcome to Learn AI in 2 Mins — quick concepts, simple metaphors, zero jargon overload.
     captions:
-      - text: "Welcome to Learn AI in 2 Mins"
+      - text: Welcome to the Learn AI in 2
         startMs: 0
-        endMs: 2800
-      - text: "Quick concepts. Simple metaphors."
-        startMs: 2800
-        endMs: 6000
+        endMs: 2160
+      - text: minutes.
+        startMs: 2160
+        endMs: 2960
+      - text: Quick concept, simple metaphor and zero jargon
+        startMs: 3080
+        endMs: 4658
     visual:
       layout: branded_card
       background: gradient_dark_blue
@@ -31,29 +33,37 @@ scenes:
           asset: lightbulb_brain
           animation: scaleIn
         - type: title
-          text: "Learn AI in 2 Mins"
+          text: Learn AI in 2 Mins
           animation: fadeIn
         - type: subtitle
-          text: "Quick concepts. Simple metaphors."
+          text: Quick concepts. Simple metaphors.
           animation: slideUp
     audio:
       music: series_intro_sting
       sfx:
         - asset: soft_whoosh
           startMs: 0
-
   - id: hook
     type: question_hook
-    durationMs: 8000
-    voiceover: >
+    durationMs: 6210
+    voiceover: |
       You probably use ChatGPT every day. But what actually IS a Large Language Model?
     captions:
-      - text: "You use ChatGPT every day."
-        startMs: 0
-        endMs: 3200
-      - text: "But what IS a Large Language Model?"
-        startMs: 3200
-        endMs: 8000
+      - text: over
+        startMs: 1442
+        endMs: 2242
+      - text: load.
+        startMs: 1982
+        endMs: 2782
+      - text: You probably use GPT everyday,
+        startMs: 2942
+        endMs: 4382
+      - text: right?
+        startMs: 4702
+        endMs: 5502
+      - text: But what actually is large language
+        startMs: 5222
+        endMs: 6210
     visual:
       layout: split
       background: dark_slate
@@ -63,91 +73,130 @@ scenes:
         animation: scaleIn
       right:
         type: headline
-        text: "What IS a Large Language Model?"
+        text: What IS a Large Language Model?
         animation: slideLeft
       elements:
         - type: label
-          text: "Episode 001"
+          text: Episode 001
           animation: fadeIn
           style: badge_top_right
     audio:
       music: ambient_pulse_low
-
   - id: metaphor_core
     type: concept_explain
-    durationMs: 54000
+    durationMs: 41916
     voiceover: >
-      Think of an LLM like autocomplete on steroids. You type a few words — your phone
-      suggests the next one. An LLM does the same thing, but at massive scale. It was
-      trained on billions of words from books, articles, and the web. It learned patterns
-      — how words usually follow other words. So when you ask a question, it doesn't look
-      things up. It predicts the most likely next word, then the next, and the next — until
-      it forms a full answer. It's not a search engine. It's not a human brain. It's a
-      pattern-prediction machine — and that's what makes it so powerful.
+      Think of an LLM like autocomplete on steroids. You type a few words — your phone suggests the next one. An LLM
+      does the same thing, but at massive scale. It was trained on billions of words from books, articles, and the web.
+      It learned patterns — how words usually follow other words. So when you ask a question, it doesn't look things up.
+      It predicts the most likely next word, then the next, and the next — until it forms a full answer. It's not a
+      search engine. It's not a human brain. It's a pattern-prediction machine — and that's what makes it so powerful.
     captions:
-      - text: "Think of an LLM like autocomplete on steroids."
-        startMs: 0
-        endMs: 5000
-      - text: "Your phone suggests the next word."
-        startMs: 5000
-        endMs: 9000
-      - text: "An LLM does the same — at massive scale."
-        startMs: 9000
-        endMs: 14000
-      - text: "Trained on billions of words."
-        startMs: 14000
-        endMs: 19000
-      - text: "Books. Articles. The web."
-        startMs: 19000
-        endMs: 23000
-      - text: "It learned patterns — not facts."
-        startMs: 23000
-        endMs: 28000
-      - text: "How words usually follow other words."
-        startMs: 28000
-        endMs: 33000
-      - text: "It doesn't look things up."
-        startMs: 33000
-        endMs: 37000
-      - text: "It predicts the next word… then the next…"
-        startMs: 37000
-        endMs: 43000
-      - text: "…until it forms a full answer."
-        startMs: 43000
-        endMs: 47000
-      - text: "Not a search engine. Not a brain."
-        startMs: 47000
-        endMs: 51000
-      - text: "A pattern-prediction machine."
-        startMs: 51000
-        endMs: 54000
+      - text: model?
+        startMs: 1912
+        endMs: 2712
+      - text: Think of LLM like an autocomplete on
+        startMs: 3412
+        endMs: 5511
+      - text: steroids.
+        startMs: 5511
+        endMs: 6311
+      - text: You type a few words, your phone suggests the next
+        startMs: 6532
+        endMs: 9512
+      - text: one.
+        startMs: 9512
+        endMs: 10312
+      - text: And LLM does the same thing, but at a massive
+        startMs: 10412
+        endMs: 13532
+      - text: scale.
+        startMs: 13532
+        endMs: 14332
+      - text: It was trained on billions of words
+        startMs: 13912
+        endMs: 16232
+      - text: from books, articles and D
+        startMs: 16232
+        endMs: 18492
+      - text: -web.
+        startMs: 18492
+        endMs: 19292
+      - text: It learned
+        startMs: 19192
+        endMs: 19992
+      - text: patterns.
+        startMs: 19652
+        endMs: 20452
+      - text: Her words usually follow other
+        startMs: 20772
+        endMs: 22452
+      - text: words.
+        startMs: 22452
+        endMs: 23252
+      - text: So when you ask a question, it doesn't look up
+        startMs: 23392
+        endMs: 25752
+      - text: things.
+        startMs: 25552
+        endMs: 26352
+      - text: It predicts the most likely next word,
+        startMs: 26292
+        endMs: 29112
+      - text: then the next, and the next, and then it forms a full
+        startMs: 29592
+        endMs: 33012
+      - text: answer.
+        startMs: 33012
+        endMs: 33812
+      - text: It's not a search engine, to be
+        startMs: 34172
+        endMs: 35372
+      - text: honest.
+        startMs: 35372
+        endMs: 36172
+      - text: It's not a human brain
+        startMs: 35812
+        endMs: 36652
+      - text: either.
+        startMs: 36652
+        endMs: 37452
+      - text: It's a pattern prediction
+        startMs: 37492
+        endMs: 38812
+      - text: machine.
+        startMs: 38812
+        endMs: 39632
+      - text: And that's what makes it so
+        startMs: 40352
+        endMs: 41916
     visual:
       layout: infographic_stack
       background: gradient_purple_blue
-      metaphor: "LLM = super-powered autocomplete"
+      metaphor: LLM = super-powered autocomplete
       elements:
         - type: headline
-          text: "LLM = Autocomplete on Steroids"
+          text: LLM = Autocomplete on Steroids
           animation: fadeIn
       steps:
-        - label: "You type a prompt"
+        - label: You type a prompt
           icon: keyboard
           animation: slideUp
           startMs: 0
-        - label: "Model predicts next word"
+        - label: Model predicts next word
           icon: arrow_right
           animation: slideUp
           startMs: 9000
-        - label: "Repeats word by word"
+        - label: Repeats word by word
           icon: loop
           animation: slideUp
           startMs: 18000
-        - label: "Full answer appears"
+        - label: Full answer appears
           icon: chat_bubble_complete
           animation: scaleIn
           startMs: 37000
       callout:
-        text: "Not a search engine. Not a brain."
+        text: Not a search engine. Not a brain.
         style: highlight_red
     audio:
       music: ambient_pulse_mid
@@ -156,67 +205,86 @@ scenes:
           startMs: 0
         - asset: word_pop
           startMs: 37000
-
   - id: recap
     type: key_takeaway
-    durationMs: 12000
+    durationMs: 9314
     voiceover: >
-      So remember — an LLM predicts the most likely next words based on patterns it
-      learned from text. Powerful, but not magic.
+      So remember — an LLM predicts the most likely next words based on patterns it learned from text. Powerful, but not
+      magic.
     captions:
-      - text: "An LLM predicts the next words"
-        startMs: 0
-        endMs: 4500
-      - text: "Based on patterns from training text"
-        startMs: 4500
-        endMs: 8500
-      - text: "Powerful — but not magic."
-        startMs: 8500
-        endMs: 12000
+      - text: powerful.
+        startMs: 76
+        endMs: 876
+      - text: So remember, an LLM predicts the most likely next
+        startMs: 596
+        endMs: 5096
+      - text: words.
+        startMs: 5096
+        endMs: 5896
+      - text: These don't patterns, it learned from the
+        startMs: 6076
+        endMs: 8196
+      - text: text.
+        startMs: 8196
+        endMs: 8996
+      - text: Powerful, but not
+        startMs: 9056
+        endMs: 9314
     visual:
       layout: summary_card
       background: dark_slate
       bullets:
-        - "Predicts next words"
-        - "Learned from text patterns"
-        - "Not stored facts"
+        - Predicts next words
+        - Learned from text patterns
+        - Not stored facts
       elements:
         - type: title
-          text: "Key Takeaway"
+          text: Key Takeaway
           animation: fadeIn
         - type: badge
-          text: "LLM = Pattern Predictor"
+          text: LLM = Pattern Predictor
           animation: highlight
     audio:
       music: ambient_pulse_low
-
   - id: outro
     type: series_outro
-    durationMs: 10000
-    voiceover: >
+    durationMs: 7762
+    voiceover: |
       That's your concept for today. Follow for the next one — Learn AI in 2 Mins.
     captions:
-      - text: "That's your concept for today."
-        startMs: 0
-        endMs: 3500
-      - text: "Follow for the next one"
-        startMs: 3500
-        endMs: 6500
-      - text: "Learn AI in 2 Mins"
-        startMs: 6500
-        endMs: 10000
+      - text: magic.
+        startMs: 1202
+        endMs: 2002
+      - text: That's your concept for
+        startMs: 2682
+        endMs: 3722
+      - text: today.
+        startMs: 3722
+        endMs: 4522
+      - text: Follow for the next
+        startMs: 4442
+        endMs: 5242
+      - text: one.
+        startMs: 5082
+        endMs: 5882
+      - text: Learn AI in 2
+        startMs: 5782
+        endMs: 6962
+      - text: minutes.
+        startMs: 6962
+        endMs: 7762
     visual:
       layout: branded_card
       background: gradient_dark_blue
       elements:
         - type: cta
-          text: "Follow for the next concept"
+          text: Follow for the next concept
           animation: pulse
         - type: title
-          text: "Learn AI in 2 Mins"
+          text: Learn AI in 2 Mins
           animation: fadeIn
         - type: badge
-          text: "Next: What is a Neural Network?"
+          text: 'Next: What is a Neural Network?'
           animation: slideUp
     audio:
       music: series_outro_sting

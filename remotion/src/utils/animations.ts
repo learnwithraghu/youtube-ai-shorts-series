@@ -32,8 +32,19 @@ export const useSceneAnimation = (
     case "scaleIn":
       return {
         opacity: interpolate(progress, [0, 1], [0, 1]),
-        transform: `scale(${interpolate(progress, [0, 1], [0.85, 1])})`,
+        transform: `scale(${interpolate(progress, [0, 1], [0.7, 1])})`,
       };
+    case "bounceIn": {
+      const bounce = spring({
+        frame: frame - delayFrames,
+        fps,
+        config: { damping: 10, stiffness: 180, mass: 0.8 },
+      });
+      return {
+        opacity: interpolate(bounce, [0, 1], [0, 1]),
+        transform: `scale(${interpolate(bounce, [0, 1], [0.5, 1])})`,
+      };
+    }
     case "pulse": {
       const pulse = 1 + Math.sin(frame / 8) * 0.03;
       return {

@@ -15,7 +15,7 @@ const repoRoot = path.resolve(remotionRoot, "..");
 const folder = process.argv[2];
 
 if (!folder) {
-  console.error("Usage: npm run render -- 001_what-is-an-llm");
+  console.error("Usage: npm run render -- 001_what-is-an-llm [out/custom-name.mp4]");
   process.exit(1);
 }
 
@@ -34,12 +34,24 @@ if (!fs.existsSync(voiceoverPath)) {
   process.exit(1);
 }
 
+console.log("\n→ Transcribing voiceover.mp3 → voiceover.vtt");
+execSync(`node scripts/mp3-to-vtt.mjs ${folder}`, {
+  cwd: remotionRoot,
+  stdio: "inherit",
+});
+
+console.log("\n→ Syncing VTT timings into episode.yaml");
+execSync(`node scripts/apply-vtt-to-episode.mjs ${folder}`, {
+  cwd: remotionRoot,
+  stdio: "inherit",
+});
+
 execSync(`node scripts/sync-episodes.mjs ${folder}`, {
   cwd: remotionRoot,
   stdio: "inherit",
 });
 
-const outFile = `out/${folder}.mp4`;
+const outFile = process.argv[3] ?? `out/${folder}.mp4`;
 const props = JSON.stringify({ episodeFolder: folder });
 
 execSync(
