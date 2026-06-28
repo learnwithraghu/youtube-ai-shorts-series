@@ -69,11 +69,23 @@ episodes/001_what-is-an-llm/
 
 ## Commands cheat sheet
 
+| Episode | Topic | Render command |
+|---------|-------|----------------|
+| 001 | What is an LLM? | `npm run video:001` |
+| 002 | What is a Neural Network? | `npm run video:002` |
+| 003 | AI vs ML vs Deep Learning | `npm run video:003` |
+| 004 | What is Training? | `npm run video:004` |
+| 005 | What is Inference? | `npm run video:005` |
+| 006 | What is a Token? | `npm run video:006` |
+| 007 | What are Embeddings? | `npm run video:007` |
+| 008 | What is a Dataset? | `npm run video:008` |
+| 009 | What is a Model Parameter? | `npm run video:009` |
+| 010 | What is Supervised Learning? | `npm run video:010` |
+| Any | — | `npm run video -- {episode-folder}` |
+
 | What | Command |
 |------|---------|
-| Create video (Episode 001) | `npm run video:001` |
-| Create video (any episode) | `npm run video -- 002_what-is-a-neural-network` |
-| Preview in browser (optional) | `cd remotion && npm run dev:001` |
+| Preview (optional) | `cd remotion && npm run dev:001` |
 
 ---
 

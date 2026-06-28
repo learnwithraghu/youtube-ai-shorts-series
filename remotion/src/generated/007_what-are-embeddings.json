@@ -1,0 +1,294 @@
+{
+  "episode": {
+    "id": "007",
+    "slug": "what-are-embeddings",
+    "title": "What are Embeddings?",
+    "targetDurationMs": 90000,
+    "series": "Learn AI in 2 Mins",
+    "tone": "simple metaphor + infographic",
+    "wordCount": 217,
+    "templateRefs": {
+      "welcome": "../../templates/welcome.yaml",
+      "outro": "../../templates/outro.yaml"
+    }
+  },
+  "scenes": [
+    {
+      "id": "welcome",
+      "type": "series_intro",
+      "durationMs": 6000,
+      "voiceover": "Welcome to Learn AI in 2 Mins — quick concepts, simple metaphors, zero jargon overload.\n",
+      "captions": [
+        {
+          "text": "Welcome to Learn AI in 2 Mins",
+          "startMs": 0,
+          "endMs": 2800
+        },
+        {
+          "text": "Quick concepts. Simple metaphors.",
+          "startMs": 2800,
+          "endMs": 6000
+        }
+      ],
+      "visual": {
+        "layout": "branded_card",
+        "background": "gradient_dark_blue",
+        "elements": [
+          {
+            "type": "icon",
+            "asset": "lightbulb_brain",
+            "animation": "scaleIn"
+          },
+          {
+            "type": "title",
+            "text": "Learn AI in 2 Mins",
+            "animation": "fadeIn"
+          },
+          {
+            "type": "subtitle",
+            "text": "Quick concepts. Simple metaphors.",
+            "animation": "slideUp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hook",
+      "type": "question_hook",
+      "durationMs": 8000,
+      "voiceover": "Computers don't understand words. So how does AI grasp meaning? Embeddings.\n",
+      "captions": [
+        {
+          "text": "Computers don't get words.",
+          "startMs": 0,
+          "endMs": 3200
+        },
+        {
+          "text": "So what are embeddings?",
+          "startMs": 3200,
+          "endMs": 8000
+        }
+      ],
+      "visual": {
+        "layout": "split",
+        "background": "dark_slate",
+        "left": {
+          "type": "icon",
+          "asset": "chat_bubble",
+          "animation": "scaleIn"
+        },
+        "right": {
+          "type": "headline",
+          "text": "So what are embeddings",
+          "animation": "slideLeft"
+        },
+        "elements": [
+          {
+            "type": "label",
+            "text": "Episode 007",
+            "animation": "fadeIn",
+            "style": "badge_top_right"
+          }
+        ]
+      }
+    },
+    {
+      "id": "metaphor_core",
+      "type": "concept_explain",
+      "durationMs": 54000,
+      "voiceover": "An embedding turns a word or sentence into a list of numbers — a point in high-dimensional space. Think GPS coordinates for meaning. \"King\" and \"Queen\" land near each other. \"King\" and \"Banana\" sit far apart. The model doesn't read \"happy\" — it reads a vector of numbers that captures happy-ness, and compares distances to other vectors. Similar meanings cluster together. That's how search, recommendations, and RAG find relevant content — not by matching exact words, but by comparing embedding distances. Words become math. Meaning becomes geometry.\n",
+      "captions": [
+        {
+          "text": "An embedding turns text into numbers.",
+          "startMs": 0,
+          "endMs": 4500
+        },
+        {
+          "text": "A point in high-dimensional space.",
+          "startMs": 4500,
+          "endMs": 8500
+        },
+        {
+          "text": "GPS coordinates for meaning.",
+          "startMs": 8500,
+          "endMs": 12000
+        },
+        {
+          "text": "'King' and 'Queen' land close.",
+          "startMs": 12000,
+          "endMs": 16000
+        },
+        {
+          "text": "'King' and 'Banana' sit far apart.",
+          "startMs": 16000,
+          "endMs": 20000
+        },
+        {
+          "text": "Model reads vectors, not words.",
+          "startMs": 20000,
+          "endMs": 24000
+        },
+        {
+          "text": "Similar meanings cluster together.",
+          "startMs": 24000,
+          "endMs": 28000
+        },
+        {
+          "text": "Search uses embedding distances.",
+          "startMs": 28000,
+          "endMs": 32000
+        },
+        {
+          "text": "Not exact word matching.",
+          "startMs": 32000,
+          "endMs": 35500
+        },
+        {
+          "text": "Recommendations work the same way.",
+          "startMs": 35500,
+          "endMs": 39500
+        },
+        {
+          "text": "RAG finds content by similarity.",
+          "startMs": 39500,
+          "endMs": 44000
+        },
+        {
+          "text": "Words become math. Meaning becomes geometry.",
+          "startMs": 44000,
+          "endMs": 54000
+        }
+      ],
+      "visual": {
+        "layout": "infographic_stack",
+        "background": "gradient_purple_blue",
+        "metaphor": "GPS coordinates for words — similar meanings sit close together",
+        "elements": [
+          {
+            "type": "headline",
+            "text": "Embedding = GPS for Meaning",
+            "animation": "fadeIn"
+          }
+        ],
+        "steps": [
+          {
+            "label": "Word or sentence enters",
+            "icon": "keyboard",
+            "animation": "slideUp",
+            "startMs": 0
+          },
+          {
+            "label": "Converted to number vector",
+            "icon": "arrow_right",
+            "animation": "slideUp",
+            "startMs": 9000
+          },
+          {
+            "label": "Similar meanings cluster nearby",
+            "icon": "loop",
+            "animation": "slideUp",
+            "startMs": 18000
+          },
+          {
+            "label": "Model compares distances",
+            "icon": "chat_bubble_complete",
+            "animation": "slideUp",
+            "startMs": 37000
+          }
+        ],
+        "callout": {
+          "text": "Similar meaning = close in number-space.",
+          "style": "highlight_red"
+        }
+      }
+    },
+    {
+      "id": "recap",
+      "type": "key_takeaway",
+      "durationMs": 12000,
+      "voiceover": "Embeddings convert text into numbers where similar meanings sit close together — that's how AI understands and searches by meaning, not spelling.\n",
+      "captions": [
+        {
+          "text": "Text → number vectors",
+          "startMs": 0,
+          "endMs": 4500
+        },
+        {
+          "text": "Similar meanings cluster",
+          "startMs": 4500,
+          "endMs": 8500
+        },
+        {
+          "text": "Powers search & RAG",
+          "startMs": 8500,
+          "endMs": 12000
+        }
+      ],
+      "visual": {
+        "layout": "summary_card",
+        "background": "dark_slate",
+        "bullets": [
+          "Words → number lists",
+          "Similar = close together",
+          "Enables semantic search"
+        ],
+        "elements": [
+          {
+            "type": "title",
+            "text": "Key Takeaway",
+            "animation": "fadeIn"
+          },
+          {
+            "type": "badge",
+            "text": "Embedding = Meaning as Math",
+            "animation": "highlight"
+          }
+        ]
+      }
+    },
+    {
+      "id": "outro",
+      "type": "series_outro",
+      "durationMs": 10000,
+      "voiceover": "That's your concept for today. Follow for the next one — Learn AI in 2 Mins.\n",
+      "captions": [
+        {
+          "text": "That's your concept for today.",
+          "startMs": 0,
+          "endMs": 3500
+        },
+        {
+          "text": "Follow for the next one",
+          "startMs": 3500,
+          "endMs": 6500
+        },
+        {
+          "text": "Learn AI in 2 Mins",
+          "startMs": 6500,
+          "endMs": 10000
+        }
+      ],
+      "visual": {
+        "layout": "branded_card",
+        "background": "gradient_dark_blue",
+        "elements": [
+          {
+            "type": "cta",
+            "text": "Follow for the next concept",
+            "animation": "pulse"
+          },
+          {
+            "type": "title",
+            "text": "Learn AI in 2 Mins",
+            "animation": "fadeIn"
+          },
+          {
+            "type": "badge",
+            "text": "Next: What is a Dataset?",
+            "animation": "slideUp"
+          }
+        ]
+      }
+    }
+  ]
+}

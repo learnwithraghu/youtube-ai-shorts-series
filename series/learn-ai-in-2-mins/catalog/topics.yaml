@@ -13,39 +13,39 @@ themes:
       - id: "002"
         slug: what-is-a-neural-network
         title: "What is a Neural Network?"
-        status: planned
+        status: draft
       - id: "003"
         slug: ai-vs-ml-vs-deep-learning
         title: "AI vs Machine Learning vs Deep Learning"
-        status: planned
+        status: draft
       - id: "004"
         slug: what-is-training
         title: "What is Training?"
-        status: planned
+        status: draft
       - id: "005"
         slug: what-is-inference
         title: "What is Inference?"
-        status: planned
+        status: draft
       - id: "006"
         slug: what-is-a-token
         title: "What is a Token?"
-        status: planned
+        status: draft
       - id: "007"
         slug: what-are-embeddings
         title: "What are Embeddings?"
-        status: planned
+        status: draft
       - id: "008"
         slug: what-is-a-dataset
         title: "What is a Dataset?"
-        status: planned
+        status: draft
       - id: "009"
         slug: what-is-a-model-parameter
         title: "What is a Model Parameter?"
-        status: planned
+        status: draft
       - id: "010"
         slug: what-is-supervised-learning
         title: "What is Supervised Learning?"
-        status: planned
+        status: draft
       - id: "011"
         slug: what-is-unsupervised-learning
         title: "What is Unsupervised Learning?"

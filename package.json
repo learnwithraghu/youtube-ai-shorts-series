@@ -2,7 +2,16 @@
   "name": "youtube-ai-shorts-series",
   "private": true,
   "scripts": {
-    "video:001": "cd remotion && npm run render:001",
+    "video:001": "cd remotion && npm run render -- 001_what-is-an-llm",
+    "video:002": "cd remotion && npm run render -- 002_what-is-a-neural-network",
+    "video:003": "cd remotion && npm run render -- 003_ai-vs-ml-vs-deep-learning",
+    "video:004": "cd remotion && npm run render -- 004_what-is-training",
+    "video:005": "cd remotion && npm run render -- 005_what-is-inference",
+    "video:006": "cd remotion && npm run render -- 006_what-is-a-token",
+    "video:007": "cd remotion && npm run render -- 007_what-are-embeddings",
+    "video:008": "cd remotion && npm run render -- 008_what-is-a-dataset",
+    "video:009": "cd remotion && npm run render -- 009_what-is-a-model-parameter",
+    "video:010": "cd remotion && npm run render -- 010_what-is-supervised-learning",
     "video": "cd remotion && npm run render --"
   }
 }

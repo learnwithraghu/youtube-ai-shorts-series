@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { execSync } from "child_process";
 import { load as loadYaml } from "js-yaml";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -49,10 +50,13 @@ const syncEpisode = (folder) => {
 
   fs.writeFileSync(metaPath, JSON.stringify({ hasVoiceover }, null, 2));
   console.log(`Synced ${folder} → src/generated/${folder}.json`);
+  return folder;
 };
 
+const synced = [];
+
 if (target) {
-  syncEpisode(target);
+  synced.push(syncEpisode(target));
 } else {
   const folders = fs
     .readdirSync(episodesRoot, { withFileTypes: true })
@@ -61,7 +65,12 @@ if (target) {
 
   for (const folder of folders) {
     if (fs.existsSync(path.join(episodesRoot, folder, "episode.yaml"))) {
-      syncEpisode(folder);
+      synced.push(syncEpisode(folder));
     }
   }
 }
+
+execSync("node scripts/regenerate-registry.mjs", {
+  cwd: remotionRoot,
+  stdio: "inherit",
+});
