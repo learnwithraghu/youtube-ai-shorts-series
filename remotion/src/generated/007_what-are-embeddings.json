@@ -74,7 +74,7 @@
         "background": "dark_slate",
         "left": {
           "type": "icon",
-          "asset": "chat_bubble",
+          "asset": "embedding-map.svg",
           "animation": "scaleIn"
         },
         "right": {
@@ -160,7 +160,8 @@
         }
       ],
       "visual": {
-        "layout": "infographic_stack",
+        "layout": "center_svg",
+        "centerAsset": "vector-space.svg",
         "background": "gradient_purple_blue",
         "metaphor": "GPS coordinates for words — similar meanings sit close together",
         "elements": [
@@ -172,25 +173,25 @@
         ],
         "steps": [
           {
-            "label": "Word or sentence enters",
+            "label": "1. Input Word",
             "icon": "keyboard",
             "animation": "slideUp",
             "startMs": 0
           },
           {
-            "label": "Converted to number vector",
+            "label": "2. Vector Mapping",
             "icon": "arrow_right",
             "animation": "slideUp",
             "startMs": 9000
           },
           {
-            "label": "Similar meanings cluster nearby",
+            "label": "3. Semantic Clustering",
             "icon": "loop",
             "animation": "slideUp",
             "startMs": 18000
           },
           {
-            "label": "Model compares distances",
+            "label": "4. Distance Compare",
             "icon": "chat_bubble_complete",
             "animation": "slideUp",
             "startMs": 37000

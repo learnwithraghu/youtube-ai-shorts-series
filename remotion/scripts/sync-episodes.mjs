@@ -48,6 +48,18 @@ const syncEpisode = (folder) => {
     console.warn(`  ${voiceoverSource}`);
   }
 
+  // Copy assets folder if it exists
+  const assetsSourceDir = path.join(episodeDir, "assets");
+  const assetsDestDir = path.join(publicEpisodesDir, folder, "assets");
+  if (fs.existsSync(assetsSourceDir)) {
+    fs.mkdirSync(assetsDestDir, { recursive: true });
+    const files = fs.readdirSync(assetsSourceDir);
+    for (const file of files) {
+      fs.copyFileSync(path.join(assetsSourceDir, file), path.join(assetsDestDir, file));
+    }
+    console.log(`Copied assets → public/episodes/${folder}/assets/`);
+  }
+
   fs.writeFileSync(metaPath, JSON.stringify({ hasVoiceover }, null, 2));
   console.log(`Synced ${folder} → src/generated/${folder}.json`);
   return folder;

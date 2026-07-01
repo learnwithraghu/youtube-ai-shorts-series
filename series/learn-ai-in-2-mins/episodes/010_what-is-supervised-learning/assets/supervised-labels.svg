@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Glowing Background -->
+  <circle cx="60" cy="60" r="45" fill="rgba(129, 140, 248, 0.12)" filter="blur(8px)" />
+
+  <!-- Pair 1: Input image (Cat representation) -> Label (Cat) -->
+  <g transform="translate(15, 20)">
+    <rect x="0" y="0" width="40" height="32" rx="6" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" />
+    <path d="M 12 24 L 12 16 L 16 20 L 24 20 L 28 16 L 28 24 Z" fill="none" stroke="#f8fafc" stroke-width="1.5" />
+    <circle cx="17" cy="18" r="1" fill="#f8fafc" />
+    <circle cx="23" cy="18" r="1" fill="#f8fafc" />
+    <!-- Label tag connected -->
+    <path d="M 32 10 L 52 10 L 52 22 L 32 22 Z" fill="#34d399" />
+    <text x="42" y="18" text-anchor="middle" fill="#0f172a" font-size="5" font-family="sans-serif" font-weight="bold">CAT</text>
+  </g>
+
+  <!-- Pair 2: Input email (Letter envelope) -> Label (Spam) -->
+  <g transform="translate(15, 65)">
+    <rect x="0" y="0" width="40" height="32" rx="6" fill="#0f172a" stroke="#818cf8" stroke-width="1.5" />
+    <!-- Envelope pattern -->
+    <rect x="8" y="10" width="24" height="14" rx="2" fill="none" stroke="#f8fafc" stroke-width="1.5" />
+    <path d="M 8 10 L 20 18 L 32 10" fill="none" stroke="#f8fafc" stroke-width="1.5" />
+    <!-- Label tag connected -->
+    <path d="M 32 10 L 54 10 L 54 22 L 32 22 Z" fill="#f87171" />
+    <text x="43" y="18" text-anchor="middle" fill="#0f172a" font-size="5" font-family="sans-serif" font-weight="bold">SPAM</text>
+  </g>
+</svg>

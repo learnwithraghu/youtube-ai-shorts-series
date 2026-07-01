@@ -54,7 +54,7 @@ scenes:
       background: dark_slate
       left:
         type: icon
-        asset: keyboard
+        asset: token-puzzle.svg
         animation: scaleIn
       right:
         type: headline
@@ -109,7 +109,8 @@ scenes:
         startMs: 43000
         endMs: 54000
     visual:
-      layout: infographic_stack
+      layout: center_svg
+      centerAsset: tokenized-text.svg
       background: gradient_purple_blue
       metaphor: "Words chopped into pieces the model can digest"
       elements:
@@ -117,19 +118,19 @@ scenes:
           text: "Token = Bite-Sized Text Chunk"
           animation: fadeIn
       steps:
-        - label: "Your text enters the model"
+        - label: "1. Input Prompt"
           icon: keyboard
           animation: slideUp
           startMs: 0
-        - label: "Split into token pieces"
+        - label: "2. Split Text"
           icon: arrow_right
           animation: slideUp
           startMs: 9000
-        - label: "Each token → number"
+        - label: "3. Convert to IDs"
           icon: loop
           animation: slideUp
           startMs: 18000
-        - label: "Model predicts next token"
+        - label: "4. Predict Token"
           icon: chat_bubble_complete
           animation: slideUp
           startMs: 37000

@@ -62,6 +62,8 @@ export type SceneVisual = {
   callout?: { text: string; style?: string };
   left?: VisualElement;
   right?: VisualElement;
+  centerAsset?: string;
+  codeSnippet?: string;
 };
 
 export type Scene = {

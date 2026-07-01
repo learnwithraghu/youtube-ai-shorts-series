@@ -54,7 +54,7 @@ scenes:
       background: dark_slate
       left:
         type: icon
-        asset: loop
+        asset: parameter-sliders.svg
         animation: scaleIn
       right:
         type: headline
@@ -109,7 +109,8 @@ scenes:
         startMs: 43000
         endMs: 54000
     visual:
-      layout: infographic_stack
+      layout: center_svg
+      centerAsset: parameter-knobs.svg
       background: gradient_purple_blue
       metaphor: "Internal knobs and dials adjusted during training"
       elements:
@@ -117,19 +118,19 @@ scenes:
           text: "Parameter = Learned Knob"
           animation: fadeIn
       steps:
-        - label: "Model starts with random numbers"
+        - label: "1. Random Settings"
           icon: keyboard
           animation: slideUp
           startMs: 0
-        - label: "Training adjusts each dial"
+        - label: "2. Dial Tuning"
           icon: arrow_right
           animation: slideUp
           startMs: 9000
-        - label: "Billions of settings tuned"
+        - label: "3. Billions Tuned"
           icon: loop
           animation: slideUp
           startMs: 18000
-        - label: "7B / 70B = dial count"
+        - label: "4. Dial Count (7B/70B)"
           icon: chat_bubble_complete
           animation: slideUp
           startMs: 37000

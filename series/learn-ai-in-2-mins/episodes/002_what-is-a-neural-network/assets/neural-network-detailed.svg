@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Connections -->
+  <line x1="20" y1="40" x2="60" y2="25" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5" />
+  <line x1="20" y1="40" x2="60" y2="60" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5" />
+  <line x1="20" y1="40" x2="60" y2="95" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5" />
+  
+  <line x1="20" y1="80" x2="60" y2="25" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5" />
+  <line x1="20" y1="80" x2="60" y2="60" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5" />
+  <line x1="20" y1="80" x2="60" y2="95" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5" />
+  
+  <line x1="60" y1="25" x2="100" y2="60" stroke="rgba(248, 113, 113, 0.5)" stroke-width="1.5" />
+  <line x1="60" y1="60" x2="100" y2="60" stroke="rgba(248, 113, 113, 0.5)" stroke-width="1.5" />
+  <line x1="60" y1="95" x2="100" y2="60" stroke="rgba(248, 113, 113, 0.5)" stroke-width="1.5" />
+
+  <!-- Nodes Layer 1 (Input Nodes) -->
+  <circle cx="20" cy="40" r="7" fill="#94a3b8" stroke="#f8fafc" stroke-width="1" />
+  <circle cx="20" cy="80" r="7" fill="#94a3b8" stroke="#f8fafc" stroke-width="1" />
+  <text x="20" y="42.5" text-anchor="middle" fill="#0f172a" font-size="6" font-family="sans-serif" font-weight="bold">In</text>
+  <text x="20" y="82.5" text-anchor="middle" fill="#0f172a" font-size="6" font-family="sans-serif" font-weight="bold">In</text>
+
+  <!-- Nodes Layer 2 (Hidden Layer) -->
+  <circle cx="60" cy="25" r="8" fill="#818cf8" stroke="#a5b4fc" stroke-width="1.5" />
+  <circle cx="60" cy="60" r="8" fill="#818cf8" stroke="#a5b4fc" stroke-width="1.5" />
+  <circle cx="60" cy="95" r="8" fill="#818cf8" stroke="#a5b4fc" stroke-width="1.5" />
+  <text x="60" y="27.5" text-anchor="middle" fill="#f8fafc" font-size="6" font-family="sans-serif" font-weight="bold">f(x)</text>
+  <text x="60" y="62.5" text-anchor="middle" fill="#f8fafc" font-size="6" font-family="sans-serif" font-weight="bold">f(x)</text>
+  <text x="60" y="97.5" text-anchor="middle" fill="#f8fafc" font-size="6" font-family="sans-serif" font-weight="bold">f(x)</text>
+
+  <!-- Nodes Layer 3 (Output Layer) -->
+  <circle cx="100" cy="60" r="9" fill="#f87171" stroke="#f8fafc" stroke-width="1.5" />
+  <text x="100" y="62.5" text-anchor="middle" fill="#f8fafc" font-size="6" font-family="sans-serif" font-weight="bold">Out</text>
+</svg>

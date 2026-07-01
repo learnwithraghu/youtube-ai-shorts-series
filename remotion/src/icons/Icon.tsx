@@ -1,5 +1,6 @@
-import { interpolate, useCurrentFrame } from "remotion";
+import { interpolate, useCurrentFrame, staticFile, Img } from "remotion";
 import { colors } from "../theme";
+import { useEpisodeFolder } from "../utils/EpisodeFolderContext";
 import {
   ArrowRightIcon,
   BellIcon,
@@ -88,6 +89,7 @@ export const Icon: React.FC<Props> = ({
   color,
 }) => {
   const frame = useCurrentFrame();
+  const episodeFolder = useEpisodeFolder();
   const Component = iconComponents[name];
   const floatY = animated ? Math.sin(frame / 12) * 4 : 0;
   const glowOpacity = glow
@@ -95,6 +97,42 @@ export const Icon: React.FC<Props> = ({
     : 0;
 
   if (!Component) {
+    if (episodeFolder && name) {
+      // Treat as a custom local asset file
+      const assetSrc = staticFile(`episodes/${episodeFolder}/assets/${name}`);
+      return (
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transform: `translateY(${floatY}px)`,
+          }}
+        >
+          {glow ? (
+            <div
+              style={{
+                position: "absolute",
+                inset: -8,
+                borderRadius: "50%",
+                background: `radial-gradient(circle, rgba(129,140,248,${glowOpacity}) 0%, transparent 70%)`,
+              }}
+            />
+          ) : null}
+          <Img
+            src={assetSrc}
+            style={{
+              width: size,
+              height: size,
+              objectFit: "contain",
+            }}
+            alt={name}
+          />
+        </div>
+      );
+    }
+
     return (
       <div
         style={{

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Stack of cards effect -->
+  <rect x="25" y="35" width="65" height="45" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1.5" transform="rotate(-6, 57, 57)" />
+  <rect x="30" y="32" width="65" height="45" rx="6" fill="#0f172a" stroke="#818cf8" stroke-width="2" />
+  
+  <!-- Content on the top card (Question side) -->
+  <text x="38" y="48" fill="#94a3b8" font-size="6" font-family="sans-serif">Input:</text>
+  <!-- Simple dog face symbol -->
+  <path d="M 45 62 C 45 58, 55 58, 55 62 C 55 65, 45 65, 45 62 Z" fill="none" stroke="#f8fafc" stroke-width="1.5" />
+  <path d="M 43 55 L 40 60 L 46 58 Z" fill="#94a3b8" />
+  <path d="M 57 55 L 60 60 L 54 58 Z" fill="#94a3b8" />
+
+  <!-- Labeled answer flap (Back of card / Label) -->
+  <path d="M 68 50 L 92 50 L 92 68 L 68 68 Z" fill="rgba(52, 211, 153, 0.15)" stroke="#34d399" stroke-width="1.5" />
+  <text x="80" y="61" text-anchor="middle" fill="#34d399" font-size="6" font-family="sans-serif" font-weight="bold">"DOG"</text>
+  
+  <!-- Small correction indicator -->
+  <path d="M 45 92 L 60 92" stroke="#f87171" stroke-width="2" stroke-dasharray="2,2" />
+  <path d="M 60 92 L 75 92" stroke="#34d399" stroke-width="2" />
+  <circle cx="60" cy="92" r="3" fill="#fbbf24" />
+</svg>

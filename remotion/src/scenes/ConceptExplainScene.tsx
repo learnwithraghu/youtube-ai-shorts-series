@@ -25,6 +25,8 @@ export const ConceptExplainScene: React.FC<{ scene: Scene }> = ({ scene }) => {
   const calloutStart = Math.min(scene.durationMs - 1800, Math.max(12000, lastCaptionStart - 400));
   const calloutStyle = useSceneAnimation("highlight", msToFrames(calloutStart));
 
+  const layout = visual.layout ?? "infographic_stack";
+
   return (
     <BrandedBackground background={visual.background}>
       {contextIcons.map((item, index) => {
@@ -55,7 +57,6 @@ export const ConceptExplainScene: React.FC<{ scene: Scene }> = ({ scene }) => {
         <div style={{ marginTop: 120, marginBottom: 36 }}>
           {visual.elements?.map((element, index) => {
             const hasExplicit = element.startMs != null;
-            // Default headline/title text to appear shortly after scene starts (first spoken content)
             const defaultStart = index === 0 ? 180 : 280 + index * 120;
             return (
               <AnimatedElement
@@ -86,7 +87,58 @@ export const ConceptExplainScene: React.FC<{ scene: Scene }> = ({ scene }) => {
           ) : null}
         </div>
 
-        <InfographicSteps steps={visual.steps} />
+        {/* Center SVG layout */}
+        {layout === "center_svg" && visual.centerAsset ? (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "36px 0 20px 0",
+              flex: 1,
+              maxHeight: 600,
+            }}
+          >
+            <Icon name={visual.centerAsset} size={620} glow animated />
+          </div>
+        ) : null}
+
+        {/* Code block layout */}
+        {layout === "code_block" && visual.codeSnippet ? (
+          <div
+            style={{
+              background: colors.card,
+              border: `2px solid ${colors.cardBorder}`,
+              borderRadius: 24,
+              padding: "28px",
+              fontFamily: "Courier New, Courier, monospace",
+              fontSize: 24,
+              color: colors.white,
+              textAlign: "left",
+              boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
+              margin: "32px 0",
+              overflow: "hidden",
+            }}
+          >
+            <div style={{ display: "flex", gap: 10, marginBottom: 20 }}>
+              <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#f87171" }} />
+              <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#fbbf24" }} />
+              <div style={{ width: 14, height: 14, borderRadius: "50%", background: "#34d399" }} />
+            </div>
+            <pre style={{ margin: 0, whiteSpace: "pre-wrap", lineHeight: 1.4 }}>
+              {visual.codeSnippet}
+            </pre>
+          </div>
+        ) : null}
+
+        {/* Standard step stacking */}
+        {layout !== "code_block" && visual.steps && visual.steps.length > 0 ? (
+          <InfographicSteps
+            steps={visual.steps}
+            compact={layout === "center_svg"}
+            calloutStartMs={calloutStart}
+          />
+        ) : null}
 
         {visual.callout ? (
           <div

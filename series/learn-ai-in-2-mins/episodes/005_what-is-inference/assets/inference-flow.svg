@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Input Node -->
+  <rect x="4" y="45" width="24" height="30" rx="6" fill="#94a3b8" />
+  <text x="16" y="63" text-anchor="middle" fill="#0f172a" font-size="5" font-family="sans-serif" font-weight="bold">INPUT</text>
+
+  <!-- Arrow Right -->
+  <path d="M 32 60 L 42 60" fill="none" stroke="#818cf8" stroke-width="2" />
+  <polygon points="42,57 47,60 42,63" fill="#818cf8" />
+
+  <!-- Trained Model Container -->
+  <rect x="51" y="38" width="34" height="44" rx="8" fill="rgba(129, 140, 248, 0.1)" stroke="#818cf8" stroke-width="2" />
+  <text x="68" y="56" text-anchor="middle" fill="#818cf8" font-size="5" font-family="sans-serif" font-weight="bold">MODEL</text>
+  <text x="68" y="66" text-anchor="middle" fill="#a5b4fc" font-size="4.5" font-family="sans-serif" font-weight="bold">(LOCKED)</text>
+
+  <!-- Arrow Right -->
+  <path d="M 89 60 L 99 60" fill="none" stroke="#f87171" stroke-width="2" />
+  <polygon points="99,57 104,60 99,63" fill="#f87171" />
+
+  <!-- Output Node -->
+  <rect x="108" y="45" width="26" height="30" rx="6" fill="#f87171" />
+  <text x="121" y="63" text-anchor="middle" fill="#f8fafc" font-size="5" font-family="sans-serif" font-weight="bold">OUTPUT</text>
+</svg>

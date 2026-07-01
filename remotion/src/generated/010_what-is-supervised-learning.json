@@ -74,7 +74,7 @@
         "background": "dark_slate",
         "left": {
           "type": "icon",
-          "asset": "chat_bubble_complete",
+          "asset": "supervised-labels.svg",
           "animation": "scaleIn"
         },
         "right": {
@@ -165,7 +165,8 @@
         }
       ],
       "visual": {
-        "layout": "infographic_stack",
+        "layout": "code_block",
+        "codeSnippet": "# Supervised Learning Example\nfrom sklearn.linear_model import LogisticRegression\n\n# Pair inputs (X) with correct labels (y)\nX_train, y_train = load_labeled_dataset()\n\n# Init the model\nmodel = LogisticRegression()\n\n# Learn mapping from inputs to labels\nmodel.fit(X_train, y_train)\n\n# Predict output for new inputs\npredictions = model.predict(X_test)\n",
         "background": "gradient_purple_blue",
         "metaphor": "Studying with an answer key — every question has the right answer",
         "elements": [

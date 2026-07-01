@@ -103,7 +103,7 @@
         "background": "dark_slate",
         "left": {
           "type": "icon",
-          "asset": "chat_bubble",
+          "asset": "llm-hook.svg",
           "animation": "scaleIn"
         },
         "right": {
@@ -262,7 +262,8 @@
         }
       ],
       "visual": {
-        "layout": "infographic_stack",
+        "layout": "center_svg",
+        "centerAsset": "autocomplete-steroids.svg",
         "background": "gradient_purple_blue",
         "metaphor": "LLM = super-powered autocomplete",
         "elements": [
@@ -274,25 +275,25 @@
         ],
         "steps": [
           {
-            "label": "You type a prompt",
+            "label": "1. Type Prompt",
             "icon": "keyboard",
             "animation": "slideUp",
             "startMs": 0
           },
           {
-            "label": "Model predicts next word",
+            "label": "2. Predict Next",
             "icon": "arrow_right",
             "animation": "slideUp",
             "startMs": 9000
           },
           {
-            "label": "Repeats word by word",
+            "label": "3. Repeat Loop",
             "icon": "loop",
             "animation": "slideUp",
             "startMs": 18000
           },
           {
-            "label": "Full answer appears",
+            "label": "4. Full Answer",
             "icon": "chat_bubble_complete",
             "animation": "scaleIn",
             "startMs": 37000

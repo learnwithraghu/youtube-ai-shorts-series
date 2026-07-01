@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Glowing Background -->
+  <circle cx="60" cy="60" r="40" fill="rgba(129, 140, 248, 0.12)" filter="blur(8px)" />
+
+  <!-- Puzzle piece 1 (Left part: "Un") -->
+  <g transform="translate(15, 35)">
+    <path d="M 0 0 H 35 Q 40 10 35 20 H 0 Z" fill="#818cf8" stroke="#a5b4fc" stroke-width="1.5" />
+    <text x="14" y="14" fill="#0f172a" font-size="9" font-family="sans-serif" font-weight="bold">Un</text>
+    <text x="16" y="27" fill="#94a3b8" font-size="5" font-family="sans-serif">id: 382</text>
+  </g>
+
+  <!-- Puzzle piece 2 (Center part: "der") -->
+  <g transform="translate(48, 35)">
+    <path d="M 5 0 Q -2 10 5 20 H 35 Q 40 10 35 20 H 5 Z" fill="#f87171" stroke="#fca5a5" stroke-width="1.5" />
+    <text x="16" y="14" fill="#0f172a" font-size="9" font-family="sans-serif" font-weight="bold">der</text>
+    <text x="16" y="27" fill="#94a3b8" font-size="5" font-family="sans-serif">id: 591</text>
+  </g>
+
+  <!-- Puzzle piece 3 (Right part: "stand") -->
+  <g transform="translate(83, 35)">
+    <path d="M 5 0 Q -2 10 5 20 H 32 V 0 Z" fill="#34d399" stroke="#6ee7b7" stroke-width="1.5" />
+    <text x="14" y="14" fill="#0f172a" font-size="8" font-family="sans-serif" font-weight="bold">stand</text>
+    <text x="14" y="27" fill="#94a3b8" font-size="5" font-family="sans-serif">id: 712</text>
+  </g>
+  
+  <!-- Arrow connectors showing segmentation -->
+  <path d="M 46 45 L 50 45" stroke="#f8fafc" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M 80 45 L 84 45" stroke="#f8fafc" stroke-width="1.5" stroke-linecap="round" />
+</svg>

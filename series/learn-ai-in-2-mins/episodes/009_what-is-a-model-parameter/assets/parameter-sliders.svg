@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Mixing board panel -->
+  <rect x="15" y="15" width="90" height="90" rx="8" fill="#0f172a" stroke="#475569" stroke-width="2" />
+  
+  <!-- Slider Track 1 (Red/Left) -->
+  <line x1="35" y1="30" x2="35" y2="90" stroke="#334155" stroke-width="3" stroke-linecap="round" />
+  <line x1="35" y1="90" x2="35" y2="60" stroke="#f87171" stroke-width="3" stroke-linecap="round" />
+  <circle cx="35" cy="60" r="5" fill="#f87171" stroke="#fca5a5" stroke-width="1.5" />
+  
+  <!-- Slider Track 2 (Purple/Center) -->
+  <line x1="60" y1="30" x2="60" y2="90" stroke="#334155" stroke-width="3" stroke-linecap="round" />
+  <line x1="60" y1="90" x2="60" y2="42" stroke="#818cf8" stroke-width="3" stroke-linecap="round" />
+  <circle cx="60" cy="42" r="5" fill="#818cf8" stroke="#a5b4fc" stroke-width="1.5" />
+  
+  <!-- Slider Track 3 (Green/Right) -->
+  <line x1="85" y1="30" x2="85" y2="90" stroke="#334155" stroke-width="3" stroke-linecap="round" />
+  <line x1="85" y1="90" x2="85" y2="75" stroke="#34d399" stroke-width="3" stroke-linecap="round" />
+  <circle cx="85" cy="75" r="5" fill="#34d399" stroke="#6ee7b7" stroke-width="1.5" />
+  
+  <!-- Labels -->
+  <text x="35" y="24" fill="#94a3b8" font-size="5" font-family="sans-serif" text-anchor="middle">w_1</text>
+  <text x="60" y="24" fill="#94a3b8" font-size="5" font-family="sans-serif" text-anchor="middle">w_2</text>
+  <text x="85" y="24" fill="#94a3b8" font-size="5" font-family="sans-serif" text-anchor="middle">bias</text>
+</svg>

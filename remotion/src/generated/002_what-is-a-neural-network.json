@@ -90,7 +90,7 @@
         "hookLabel": "Neural Network",
         "left": {
           "type": "icon",
-          "asset": "neural",
+          "asset": "assembly-line.svg",
           "animation": "scaleIn"
         },
         "right": {
@@ -226,7 +226,8 @@
         }
       ],
       "visual": {
-        "layout": "infographic_stack",
+        "layout": "center_svg",
+        "centerAsset": "neural-network-detailed.svg",
         "background": "gradient_purple_blue",
         "metaphor": "Subway map — transfer at each station",
         "elements": [
@@ -258,25 +259,25 @@
         ],
         "steps": [
           {
-            "label": "Data enters Station 1",
+            "label": "1. Data Enters",
             "icon": "pattern",
             "animation": "slideUp",
             "startMs": 4559
           },
           {
-            "label": "Transfer to deeper tracks",
+            "label": "2. Deep Tracks",
             "icon": "neural",
             "animation": "slideUp",
             "startMs": 8439
           },
           {
-            "label": "More stops, more signals",
+            "label": "3. Layered Signals",
             "icon": "sparkle",
             "animation": "slideUp",
             "startMs": 15179
           },
           {
-            "label": "Exit with final answer",
+            "label": "4. Final Answer",
             "icon": "check",
             "animation": "scaleIn",
             "startMs": 21259

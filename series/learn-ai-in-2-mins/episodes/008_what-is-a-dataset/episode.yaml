@@ -54,7 +54,7 @@ scenes:
       background: dark_slate
       left:
         type: icon
-        asset: keyboard
+        asset: dataset-archive.svg
         animation: scaleIn
       right:
         type: headline
@@ -109,7 +109,8 @@ scenes:
         startMs: 43000
         endMs: 54000
     visual:
-      layout: infographic_stack
+      layout: center_svg
+      centerAsset: dataset-table.svg
       background: gradient_purple_blue
       metaphor: "A curated textbook of examples the model studies"
       elements:
@@ -117,19 +118,19 @@ scenes:
           text: "Dataset = AI's Textbook"
           animation: fadeIn
       steps:
-        - label: "Collect examples (text, images…)"
+        - label: "1. Gather Data"
           icon: keyboard
           animation: slideUp
           startMs: 0
-        - label: "Label & clean the data"
+        - label: "2. Clean & Label"
           icon: arrow_right
           animation: slideUp
           startMs: 9000
-        - label: "Split: train vs test sets"
+        - label: "3. Train/Test Split"
           icon: loop
           animation: slideUp
           startMs: 18000
-        - label: "Feed training set to model"
+        - label: "4. Feed Model"
           icon: chat_bubble_complete
           animation: slideUp
           startMs: 37000

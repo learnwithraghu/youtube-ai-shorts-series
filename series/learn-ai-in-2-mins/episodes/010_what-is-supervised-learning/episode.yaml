@@ -54,7 +54,7 @@ scenes:
       background: dark_slate
       left:
         type: icon
-        asset: chat_bubble_complete
+        asset: supervised-labels.svg
         animation: scaleIn
       right:
         type: headline
@@ -112,7 +112,22 @@ scenes:
         startMs: 45000
         endMs: 54000
     visual:
-      layout: infographic_stack
+      layout: code_block
+      codeSnippet: |
+        # Supervised Learning Example
+        from sklearn.linear_model import LogisticRegression
+
+        # Pair inputs (X) with correct labels (y)
+        X_train, y_train = load_labeled_dataset()
+
+        # Init the model
+        model = LogisticRegression()
+
+        # Learn mapping from inputs to labels
+        model.fit(X_train, y_train)
+
+        # Predict output for new inputs
+        predictions = model.predict(X_test)
       background: gradient_purple_blue
       metaphor: "Studying with an answer key — every question has the right answer"
       elements:

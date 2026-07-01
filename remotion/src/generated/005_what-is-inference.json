@@ -74,7 +74,7 @@
         "background": "dark_slate",
         "left": {
           "type": "icon",
-          "asset": "arrow_right",
+          "asset": "inference-exam.svg",
           "animation": "scaleIn"
         },
         "right": {
@@ -160,7 +160,8 @@
         }
       ],
       "visual": {
-        "layout": "infographic_stack",
+        "layout": "center_svg",
+        "centerAsset": "inference-flow.svg",
         "background": "gradient_purple_blue",
         "metaphor": "Exam day after studying — apply knowledge to new questions",
         "elements": [
@@ -172,25 +173,25 @@
         ],
         "steps": [
           {
-            "label": "Model is fully trained & locked",
+            "label": "1. Locked Model",
             "icon": "keyboard",
             "animation": "slideUp",
             "startMs": 0
           },
           {
-            "label": "New input arrives",
+            "label": "2. New Input",
             "icon": "arrow_right",
             "animation": "slideUp",
             "startMs": 9000
           },
           {
-            "label": "Model runs forward → prediction",
+            "label": "3. Forward Run",
             "icon": "loop",
             "animation": "slideUp",
             "startMs": 18000
           },
           {
-            "label": "No learning — just answering",
+            "label": "4. Fast Answer",
             "icon": "chat_bubble_complete",
             "animation": "slideUp",
             "startMs": 37000

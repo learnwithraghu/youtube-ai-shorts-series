@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="hookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#f87171" />
+    </linearGradient>
+  </defs>
+  <!-- Background Glow -->
+  <circle cx="60" cy="60" r="45" fill="rgba(129, 140, 248, 0.15)" filter="blur(10px)" />
+  
+  <!-- Outer Prompt bubble -->
+  <rect x="15" y="25" width="90" height="70" rx="12" fill="#0f172a" stroke="url(#hookGrad)" stroke-width="2.5" />
+  
+  <!-- Chat Header -->
+  <circle cx="28" cy="38" r="3" fill="#f87171" />
+  <circle cx="38" cy="38" r="3" fill="#fbbf24" />
+  <circle cx="48" cy="38" r="3" fill="#34d399" />
+  
+  <!-- AI symbol -->
+  <path d="M 90 35 L 95 40 L 90 45 L 85 40 Z" fill="#818cf8" />
+  <circle cx="90" cy="40" r="1.5" fill="#f8fafc" />
+
+  <!-- Prompt line -->
+  <rect x="25" y="52" width="55" height="4" rx="2" fill="#94a3b8" />
+  <rect x="25" y="62" width="70" height="4" rx="2" fill="#94a3b8" />
+  
+  <!-- Typing cursor -->
+  <rect x="97" y="61" width="2" height="6" fill="#818cf8" />
+  
+  <!-- Response Preview bubble -->
+  <path d="M 30 74 L 75 74 L 75 84 L 35 84 Z" fill="rgba(129, 140, 248, 0.2)" stroke="#818cf8" stroke-width="1" />
+  <text x="35" y="81" fill="#f8fafc" font-size="5" font-family="sans-serif" font-weight="bold">AI: Hello...</text>
+</svg>

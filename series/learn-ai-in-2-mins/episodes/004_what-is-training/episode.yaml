@@ -54,7 +54,7 @@ scenes:
       background: dark_slate
       left:
         type: icon
-        asset: loop
+        asset: training-flashcards.svg
         animation: scaleIn
       right:
         type: headline
@@ -109,7 +109,8 @@ scenes:
         startMs: 44000
         endMs: 54000
     visual:
-      layout: infographic_stack
+      layout: center_svg
+      centerAsset: training-loop.svg
       background: gradient_purple_blue
       metaphor: "Learning to ride a bike — fall, adjust, try again"
       elements:
@@ -117,19 +118,19 @@ scenes:
           text: "Training = Learn by Trial and Error"
           animation: fadeIn
       steps:
-        - label: "Model starts with random guesses"
+        - label: "1. Random Guesses"
           icon: keyboard
           animation: slideUp
           startMs: 0
-        - label: "Show labeled examples"
+        - label: "2. Show Examples"
           icon: arrow_right
           animation: slideUp
           startMs: 9000
-        - label: "Measure error → adjust settings"
+        - label: "3. Measure & Adjust"
           icon: loop
           animation: slideUp
           startMs: 18000
-        - label: "Repeat millions of times"
+        - label: "4. Repeat Loop"
           icon: chat_bubble_complete
           animation: slideUp
           startMs: 37000

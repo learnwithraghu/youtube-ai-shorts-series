@@ -1,28 +1,30 @@
 episode:
-  id: "003"
+  id: '003'
   slug: ai-vs-ml-vs-deep-learning
-  title: "AI vs Machine Learning vs Deep Learning"
-  targetDurationMs: 90000
-  series: "Learn AI in 2 Mins"
-  tone: "simple metaphor + infographic"
+  title: AI vs Machine Learning vs Deep Learning
+  targetDurationMs: 90020
+  series: Learn AI in 2 Mins
+  tone: simple metaphor + infographic
   wordCount: 218
   templateRefs:
-    welcome: "../../templates/welcome.yaml"
-    outro: "../../templates/outro.yaml"
-
+    welcome: ../../templates/welcome.yaml
+    outro: ../../templates/outro.yaml
 scenes:
   - id: welcome
     type: series_intro
-    durationMs: 6000
-    voiceover: >
+    durationMs: 6001
+    voiceover: |
       Welcome to Learn AI in 2 Mins — quick concepts, simple metaphors, zero jargon overload.
     captions:
-      - text: "Welcome to Learn AI in 2 Mins"
+      - text: Welcome to Learn with AI in
         startMs: 0
-        endMs: 2800
-      - text: "Quick concepts. Simple metaphors."
-        startMs: 2800
-        endMs: 6000
+        endMs: 2240
+      - text: Tominets.
+        startMs: 2240
+        endMs: 3040
+      - text: Quick concept, Simple Metafers and Zero Jargon
+        startMs: 3260
+        endMs: 6001
     visual:
       layout: branded_card
       background: gradient_dark_blue
@@ -31,167 +33,253 @@ scenes:
           asset: lightbulb_brain
           animation: scaleIn
         - type: title
-          text: "Learn AI in 2 Mins"
+          text: Learn AI in 2 Mins
           animation: fadeIn
         - type: subtitle
-          text: "Quick concepts. Simple metaphors."
+          text: Quick concepts. Simple metaphors.
           animation: slideUp
-
   - id: hook
     type: question_hook
-    durationMs: 8000
-    voiceover: >
+    durationMs: 8002
+    voiceover: |
       AI, Machine Learning, Deep Learning — people use these interchangeably. What's the difference?
     captions:
-      - text: "AI. ML. Deep Learning."
-        startMs: 0
-        endMs: 3200
-      - text: "What's the actual difference?"
-        startMs: 3200
-        endMs: 8000
+      - text: Overloop.
+        startMs: 699
+        endMs: 1499
+      - text: AI Machine Learning Deep
+        startMs: 1919
+        endMs: 3439
+      - text: Learning.
+        startMs: 3439
+        endMs: 4239
+      - text: People use these three
+        startMs: 4099
+        endMs: 5419
+      - text: interchangeably.
+        startMs: 5419
+        endMs: 6279
+      - text: What's the
+        startMs: 6779
+        endMs: 7579
+      - text: difference?
+        startMs: 7079
+        endMs: 7879
     visual:
       layout: split
       background: dark_slate
       left:
         type: icon
-        asset: chat_bubble
+        asset: nesting-dolls.svg
         animation: scaleIn
       right:
         type: headline
-        text: "What's the actual difference"
+        text: What's the actual difference
         animation: slideLeft
       elements:
         - type: label
-          text: "Episode 003"
+          text: Episode 003
           animation: fadeIn
           style: badge_top_right
-
   - id: metaphor_core
     type: concept_explain
-    durationMs: 54000
+    durationMs: 54012
     voiceover: >
-      Picture three Russian nesting dolls. The biggest doll is Artificial Intelligence — any system that mimics smart behavior. Chess bots, recommendation engines, chatbots — all AI. Inside that sits Machine Learning — AI that learns from data instead of hard-coded rules. Spotify learning your taste? That's ML. Inside ML sits the smallest doll: Deep Learning — ML using neural networks with many layers. ChatGPT, image generators, voice recognition — that's deep learning. So every deep learning system is machine learning. Every ML system is AI. But not all AI uses ML, and not all ML is deep. Three terms, one nested family.
+      Picture three Russian nesting dolls. The biggest doll is Artificial Intelligence — any system that mimics smart
+      behavior. Chess bots, recommendation engines, chatbots — all AI. Inside that sits Machine Learning — AI that
+      learns from data instead of hard-coded rules. Spotify learning your taste? That's ML. Inside ML sits the smallest
+      doll: Deep Learning — ML using neural networks with many layers. ChatGPT, image generators, voice recognition —
+      that's deep learning. So every deep learning system is machine learning. Every ML system is AI. But not all AI
+      uses ML, and not all ML is deep. Three terms, one nested family.
     captions:
-      - text: "Picture three Russian nesting dolls."
-        startMs: 0
-        endMs: 4500
-      - text: "Biggest: Artificial Intelligence."
-        startMs: 4500
-        endMs: 9000
-      - text: "Any system mimicking smart behavior."
-        startMs: 9000
-        endMs: 13500
-      - text: "Inside: Machine Learning."
-        startMs: 13500
-        endMs: 17500
-      - text: "AI that learns from data."
-        startMs: 17500
-        endMs: 21500
-      - text: "Not hard-coded rules."
-        startMs: 21500
-        endMs: 25000
-      - text: "Inside ML: Deep Learning."
-        startMs: 25000
-        endMs: 29000
-      - text: "Neural networks with many layers."
-        startMs: 29000
-        endMs: 33500
-      - text: "ChatGPT = Deep Learning."
-        startMs: 33500
-        endMs: 37500
-      - text: "Every DL system is ML. Every ML is AI."
-        startMs: 37500
-        endMs: 43000
-      - text: "Not all AI uses ML."
-        startMs: 43000
-        endMs: 48000
-      - text: "Three terms, one nested family."
-        startMs: 48000
-        endMs: 54000
+      - text: Picture three Russian nesting balls that we have played with while we were
+        startMs: 97
+        endMs: 4257
+      - text: young.
+        startMs: 4257
+        endMs: 5057
+      - text: The biggest doll is the artificial
+        startMs: 5297
+        endMs: 7157
+      - text: intelligence.
+        startMs: 7157
+        endMs: 7957
+      - text: Any system that mimics smart
+        startMs: 8517
+        endMs: 10697
+      - text: behavior.
+        startMs: 10697
+        endMs: 11497
+      - text: Just bots, recommendation engine, chat bots, all
+        startMs: 12297
+        endMs: 15697
+      - text: AI.
+        startMs: 15697
+        endMs: 16497
+      - text: Inside that sets machine
+        startMs: 17277
+        endMs: 19197
+      - text: learning.
+        startMs: 19197
+        endMs: 19997
+      - text: AI that learns from the data instead of hard coded
+        startMs: 20197
+        endMs: 23897
+      - text: rules.
+        startMs: 23897
+        endMs: 24697
+      - text: Spotify learning your taste of music, that is
+        startMs: 24837
+        endMs: 28437
+      - text: ML.
+        startMs: 27917
+        endMs: 28717
+      - text: Inside ML sets the smallest doll, deep
+        startMs: 29017
+        endMs: 32557
+      - text: learning.
+        startMs: 32557
+        endMs: 33357
+      - text: ML using neural network with many
+        startMs: 33777
+        endMs: 36317
+      - text: layers.
+        startMs: 36317
+        endMs: 37157
+      - text: Chat GPT, image generator, voice recognition, that
+        startMs: 37857
+        endMs: 41817
+      - text: is deep
+        startMs: 41817
+        endMs: 42617
+      - text: learning.
+        startMs: 42437
+        endMs: 43237
+      - text: So every deep learning system is machine
+        startMs: 42837
+        endMs: 46597
+      - text: learning.
+        startMs: 46597
+        endMs: 47397
+      - text: Every ML system is AI, but not
+        startMs: 47517
+        endMs: 50516
+      - text: all AI uses ML and not all
+        startMs: 50516
+        endMs: 54012
     visual:
       layout: infographic_stack
       background: gradient_purple_blue
-      metaphor: "Russian nesting dolls — each fits inside the next"
+      metaphor: Russian nesting dolls — each fits inside the next
       elements:
         - type: headline
-          text: "AI ⊃ ML ⊃ Deep Learning"
+          text: AI ⊃ ML ⊃ Deep Learning
           animation: fadeIn
       steps:
-        - label: "AI — any smart-seeming system"
-          icon: keyboard
+        - label: "1. AI (Smart Systems)"
+          icon: nesting-dolls.svg
           animation: slideUp
           startMs: 0
-        - label: "ML — learns from data"
-          icon: arrow_right
+        - label: "2. ML (Learns from Data)"
+          icon: spotify-heart.svg
           animation: slideUp
           startMs: 9000
-        - label: "Deep Learning — neural nets with layers"
-          icon: loop
+        - label: "3. DL (Layered Nets)"
+          icon: neural-layers.svg
           animation: slideUp
           startMs: 18000
-        - label: "ChatGPT & image AI = Deep Learning"
+        - label: "4. ChatGPT & GenAI"
           icon: chat_bubble_complete
           animation: slideUp
           startMs: 37000
       callout:
-        text: "Deep Learning ⊂ ML ⊂ AI"
+        text: Deep Learning ⊂ ML ⊂ AI
         style: highlight_red
-
   - id: recap
     type: key_takeaway
-    durationMs: 12000
+    durationMs: 12003
     voiceover: >
-      Remember — AI is the big umbrella. Machine learning learns from data. Deep learning uses layered neural networks. Nested, not interchangeable.
+      Remember — AI is the big umbrella. Machine learning learns from data. Deep learning uses layered neural networks.
+      Nested, not interchangeable.
     captions:
-      - text: "AI = umbrella term"
-        startMs: 0
-        endMs: 4500
-      - text: "ML learns from data"
-        startMs: 4500
-        endMs: 8500
-      - text: "Deep Learning = layered neural nets"
-        startMs: 8500
-        endMs: 12000
+      - text: ML is deep
+        startMs: 265
+        endMs: 1565
+      - text: learning.
+        startMs: 1565
+        endMs: 2365
+      - text: Three terms, one nested
+        startMs: 2385
+        endMs: 4425
+      - text: family.
+        startMs: 4425
+        endMs: 5225
+      - text: Remember, AI is the big
+        startMs: 5605
+        endMs: 7245
+      - text: umbrella.
+        startMs: 7245
+        endMs: 8045
+      - text: Machine learning learns from the
+        startMs: 8145
+        endMs: 9965
+      - text: data.
+        startMs: 9965
+        endMs: 10765
+      - text: Deep learning uses layer neural
+        startMs: 10945
+        endMs: 12003
     visual:
       layout: summary_card
       background: dark_slate
       bullets:
-        - "AI = smart systems broadly"
-        - "ML = learns from data"
-        - "DL = deep neural networks"
+        - AI = smart systems broadly
+        - ML = learns from data
+        - DL = deep neural networks
       elements:
         - type: title
-          text: "Key Takeaway"
+          text: Key Takeaway
           animation: fadeIn
         - type: badge
-          text: "AI ⊃ ML ⊃ DL"
+          text: AI ⊃ ML ⊃ DL
           animation: highlight
-
   - id: outro
     type: series_outro
-    durationMs: 10000
-    voiceover: >
+    durationMs: 10002
+    voiceover: |
       That's your concept for today. Follow for the next one — Learn AI in 2 Mins.
     captions:
-      - text: "That's your concept for today."
-        startMs: 0
-        endMs: 3500
-      - text: "Follow for the next one"
-        startMs: 3500
-        endMs: 6500
-      - text: "Learn AI in 2 Mins"
-        startMs: 6500
-        endMs: 10000
+      - text: networks.
+        startMs: 862
+        endMs: 1662
+      - text: All of them are nested, but not
+        startMs: 2162
+        endMs: 3882
+      - text: interchangeable.
+        startMs: 3882
+        endMs: 4682
+      - text: That's your concept for the
+        startMs: 4542
+        endMs: 6042
+      - text: day.
+        startMs: 6042
+        endMs: 6842
+      - text: Follow for the next one, learn AI in two
+        startMs: 6802
+        endMs: 9202
+      - text: minutes.
+        startMs: 9202
+        endMs: 10002
     visual:
       layout: branded_card
       background: gradient_dark_blue
       elements:
         - type: cta
-          text: "Follow for the next concept"
+          text: Follow for the next concept
           animation: pulse
         - type: title
-          text: "Learn AI in 2 Mins"
+          text: Learn AI in 2 Mins
           animation: fadeIn
         - type: badge
-          text: "Next: What is Training?"
+          text: 'Next: What is Training?'
           animation: slideUp
